@@ -1,0 +1,8 @@
+__pycache__/
+guia-html/
+*.pdf
+*.pdf.txt
+comarcas_pdf.py
+comarcas-municipios.json
+_*
+*.tmp

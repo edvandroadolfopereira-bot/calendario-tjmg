@@ -1,0 +1,3643 @@
+{
+ "fonte": "https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/consulta.do",
+ "coletado_em": "30/09/2026 10:02",
+ "comarcas": {
+  "Abaeté": {
+   "codigo": "2",
+   "municipios": [
+    "Abaeté",
+    "Cedro do Abaeté",
+    "Paineiras"
+   ],
+   "distritos": [
+    "Poções de Paineiras"
+   ]
+  },
+  "Abre Campo": {
+   "codigo": "3",
+   "municipios": [
+    "Abre Campo",
+    "Caputira",
+    "Matipó",
+    "Pedra Bonita",
+    "Santa Margarida",
+    "Sericita"
+   ],
+   "distritos": [
+    "Granada",
+    "Padre Fialho",
+    "Ribeirão de São Domingos"
+   ]
+  },
+  "Águas Formosas": {
+   "codigo": "9",
+   "municipios": [
+    "Águas Formosas",
+    "Bertópolis",
+    "Crisólita",
+    "Fronteira dos Vales",
+    "Machacalis",
+    "Santa Helena de Minas",
+    "Umburatiba"
+   ],
+   "distritos": [
+    "Água Quente",
+    "Umburaninha",
+    "Nova Santa Luzia",
+    "Bom Jesus da Vitória"
+   ]
+  },
+  "Aimorés": {
+   "codigo": "11",
+   "municipios": [
+    "Aimorés"
+   ],
+   "distritos": [
+    "Alto do Capim",
+    "Conceição do Capim",
+    "Expedicionário Alício",
+    "Mundo Novo de Minas",
+    "Penha do Capim",
+    "Santo Antônio do Rio Doce",
+    "São Sebastião da Vala",
+    "Tabaúna"
+   ]
+  },
+  "Aiuruoca": {
+   "codigo": "12",
+   "municipios": [
+    "Aiuruoca",
+    "Bocaina de Minas",
+    "Carvalhos",
+    "Liberdade",
+    "Passa-Vinte",
+    "Seritinga",
+    "Serranos"
+   ],
+   "distritos": [
+    "Mirantão",
+    "Franceses"
+   ]
+  },
+  "Alfenas": {
+   "codigo": "16",
+   "municipios": [
+    "Alfenas",
+    "Serrania"
+   ],
+   "distritos": [
+    "Barranco Alto"
+   ]
+  },
+  "Almenara": {
+   "codigo": "17",
+   "municipios": [
+    "Almenara",
+    "Bandeira",
+    "Divisópolis",
+    "Mata Verde",
+    "Palmópolis",
+    "Rio do Prado",
+    "Rubim"
+   ],
+   "distritos": [
+    "Pedra Grande",
+    "Dois de Abril",
+    "Itapiru"
+   ]
+  },
+  "Alpinópolis": {
+   "codigo": "19",
+   "municipios": [
+    "Alpinópolis",
+    "São José da Barra"
+   ],
+   "distritos": []
+  },
+  "Alto Rio Doce": {
+   "codigo": "21",
+   "municipios": [
+    "Alto Rio Doce",
+    "Cipotânea"
+   ],
+   "distritos": [
+    "Abreus",
+    "Missionário",
+    "Vitorinos"
+   ]
+  },
+  "Alvinópolis": {
+   "codigo": "23",
+   "municipios": [
+    "Alvinópolis",
+    "Dom Silvério",
+    "Sem-Peixe"
+   ],
+   "distritos": [
+    "Barretos de Alvinópolis",
+    "Fonseca",
+    "Major Ezequiel"
+   ]
+  },
+  "Além Paraíba": {
+   "codigo": "15",
+   "municipios": [
+    "Além Paraíba",
+    "Santo Antônio do Aventureiro",
+    "Volta Grande"
+   ],
+   "distritos": [
+    "Angustura",
+    "São Domingos",
+    "Trimonte"
+   ]
+  },
+  "Andradas": {
+   "codigo": "26",
+   "municipios": [
+    "Andradas",
+    "Ibitiúra de Minas"
+   ],
+   "distritos": [
+    "Campestrinho",
+    "Gramínea"
+   ]
+  },
+  "Andrelândia": {
+   "codigo": "28",
+   "municipios": [
+    "Andrelândia",
+    "Arantina",
+    "Bom Jardim de Minas",
+    "Madre de Deus de Minas",
+    "São Vicente de Minas"
+   ],
+   "distritos": [
+    "Tabuão"
+   ]
+  },
+  "Araguari": {
+   "codigo": "35",
+   "municipios": [
+    "Araguari",
+    "Indianópolis"
+   ],
+   "distritos": [
+    "Amanhece",
+    "Florestina",
+    "Piracaíba"
+   ]
+  },
+  "Araxá": {
+   "codigo": "40",
+   "municipios": [
+    "Araxá",
+    "Tapira"
+   ],
+   "distritos": []
+  },
+  "Araçuaí": {
+   "codigo": "34",
+   "municipios": [
+    "Araçuaí",
+    "Coronel Murta",
+    "Itinga",
+    "Padre Paraíso",
+    "Ponto dos Volantes",
+    "Virgem da Lapa"
+   ],
+   "distritos": [
+    "Engenheiro Schnoor",
+    "Itira",
+    "Barra dos Salinas",
+    "Freire Cardoso",
+    "Jacaré",
+    "Santana do Araçuaí",
+    "São João do Vacaria"
+   ]
+  },
+  "Arcos": {
+   "codigo": "42",
+   "municipios": [
+    "Arcos",
+    "Pains"
+   ],
+   "distritos": [
+    "Vila Costina"
+   ]
+  },
+  "Areado": {
+   "codigo": "43",
+   "municipios": [
+    "Alterosa",
+    "Areado"
+   ],
+   "distritos": [
+    "Divino Espírito Santo"
+   ]
+  },
+  "Arinos": {
+   "codigo": "778",
+   "municipios": [
+    "Arinos",
+    "Chapada Gaúcha",
+    "Uruana de Minas",
+    "Urucuia"
+   ],
+   "distritos": [
+    "Pic-Sagarana",
+    "Vila Bom Jesus",
+    "Serra das Araras",
+    "Vila Bom Jesus de Minas",
+    "Santa Cruz"
+   ]
+  },
+  "Açucena": {
+   "codigo": "5",
+   "municipios": [
+    "Açucena",
+    "Belo Oriente",
+    "Naque"
+   ],
+   "distritos": [
+    "Aramirim",
+    "Felicina",
+    "Gama",
+    "Naque-Nanuque",
+    "Bom Jesus do Bagre",
+    "Perpétuo Socorro",
+    "São Sebastião de Braúnas"
+   ]
+  },
+  "Baependi": {
+   "codigo": "49",
+   "municipios": [
+    "Baependi"
+   ],
+   "distritos": []
+  },
+  "Bambuí": {
+   "codigo": "51",
+   "municipios": [
+    "Bambuí",
+    "Medeiros",
+    "Tapiraí"
+   ],
+   "distritos": [
+    "Altolândia"
+   ]
+  },
+  "Barbacena": {
+   "codigo": "56",
+   "municipios": [
+    "Alfredo Vasconcelos",
+    "Antônio Carlos",
+    "Barbacena",
+    "Bias Fortes",
+    "Desterro do Melo",
+    "Ibertioga",
+    "Piedade do Rio Grande",
+    "Ressaquinha",
+    "Santa Bárbara do Tugúrio",
+    "Santa Rita do Ibitipoca",
+    "Santana do Garambéu",
+    "Senhora dos Remédios"
+   ],
+   "distritos": [
+    "São José de Pouso Alegre",
+    "Campolide",
+    "Doutor Sá Fortes",
+    "São Sebastião de Campolide",
+    "Colônia Rodrigo Silva",
+    "Correia de Almeida",
+    "Costas da Mantiqueira",
+    "Faria",
+    "Galego",
+    "Mantiqueira do Palmital",
+    "Padre Brito",
+    "Pinheiro Grosso",
+    "Ponte do Cosme",
+    "Ponto Chique do Martelo",
+    "São Sebastião dos Torres",
+    "Senhora das Dores",
+    "Paraíso da Piedade",
+    "Santo Antônio do Porto",
+    "Canjamba",
+    "Vargem do Amargoso",
+    "Bom Retiro",
+    "Bom Jesus do Vermelho",
+    "Paraíso Garcia",
+    "Palmital dos Carvalhos"
+   ]
+  },
+  "Barroso": {
+   "codigo": "59",
+   "municipios": [
+    "Barroso"
+   ],
+   "distritos": []
+  },
+  "Barão de Cocais": {
+   "codigo": "54",
+   "municipios": [
+    "Barão de Cocais",
+    "Bom Jesus do Amparo"
+   ],
+   "distritos": [
+    "Cocais"
+   ]
+  },
+  "Belo Horizonte": {
+   "codigo": "24",
+   "municipios": [
+    "Belo Horizonte"
+   ],
+   "distritos": [
+    "Barreiro",
+    "Venda Nova"
+   ]
+  },
+  "Belo Vale": {
+   "codigo": "64",
+   "municipios": [
+    "Belo Vale",
+    "Moeda"
+   ],
+   "distritos": [
+    "Santana do Paraopeba",
+    "Coco"
+   ]
+  },
+  "Betim": {
+   "codigo": "27",
+   "municipios": [
+    "Betim"
+   ],
+   "distritos": []
+  },
+  "Bicas": {
+   "codigo": "69",
+   "municipios": [
+    "Bicas",
+    "Guarará",
+    "Maripá de Minas",
+    "Pequeri"
+   ],
+   "distritos": []
+  },
+  "Boa Esperança": {
+   "codigo": "71",
+   "municipios": [
+    "Boa Esperança",
+    "Coqueiral",
+    "Ilicínea"
+   ],
+   "distritos": [
+    "Frei Eustáquio"
+   ]
+  },
+  "Bocaiúva": {
+   "codigo": "73",
+   "municipios": [
+    "Bocaiúva",
+    "Engenheiro Navarro",
+    "Francisco Dumont",
+    "Guaraciama",
+    "Olhos-d'Água"
+   ],
+   "distritos": [
+    "Alto Belo",
+    "Terra Branca"
+   ]
+  },
+  "Bom Despacho": {
+   "codigo": "74",
+   "municipios": [
+    "Bom Despacho",
+    "Moema"
+   ],
+   "distritos": [
+    "Engenho do Ribeiro"
+   ]
+  },
+  "Bom Sucesso": {
+   "codigo": "80",
+   "municipios": [
+    "Bom Sucesso",
+    "Ibituruna",
+    "Santo Antônio do Amparo"
+   ],
+   "distritos": [
+    "Macaia",
+    "São Sebastião da Estrela"
+   ]
+  },
+  "Bonfim": {
+   "codigo": "81",
+   "municipios": [
+    "Bonfim",
+    "Crucilândia",
+    "Piedade dos Gerais",
+    "Rio Manso"
+   ],
+   "distritos": [
+    "Santo Antônio da Vargem Alegre",
+    "Sousa"
+   ]
+  },
+  "Bonfinópolis de Minas": {
+   "codigo": "82",
+   "municipios": [
+    "Bonfinópolis de Minas",
+    "Dom Bosco",
+    "Natalândia",
+    "Riachinho"
+   ],
+   "distritos": []
+  },
+  "Borda da Mata": {
+   "codigo": "83",
+   "municipios": [
+    "Borda da Mata",
+    "Tocos do Moji"
+   ],
+   "distritos": [
+    "Cervo",
+    "Sertãozinho"
+   ]
+  },
+  "Botelhos": {
+   "codigo": "84",
+   "municipios": [
+    "Botelhos"
+   ],
+   "distritos": [
+    "Palmeiral",
+    "São Gonçalo de Botelhos"
+   ]
+  },
+  "Brasília de Minas": {
+   "codigo": "86",
+   "municipios": [
+    "Brasília de Minas",
+    "Campo Azul",
+    "Japonvar",
+    "Luislândia",
+    "Ponto Chique",
+    "Ubaí"
+   ],
+   "distritos": [
+    "Angicos de Minas",
+    "Fernão Dias",
+    "Retiro de Santo Antônio",
+    "Vargem Grande do Bom Jesus",
+    "Vila de Fátima",
+    "Nova Minda",
+    "Bentópolis de Minas"
+   ]
+  },
+  "Brasópolis": {
+   "codigo": "89",
+   "municipios": [
+    "Brazópolis",
+    "Piranguinho"
+   ],
+   "distritos": [
+    "Dias",
+    "Luminosa",
+    "Olegário Maciel",
+    "Santa Bárbara do Sapucaí"
+   ]
+  },
+  "Brumadinho": {
+   "codigo": "90",
+   "municipios": [
+    "Brumadinho"
+   ],
+   "distritos": [
+    "Aranha",
+    "Conceição de Itaguá",
+    "Piedade do Paraopeba",
+    "São José do Paraopeba"
+   ]
+  },
+  "Bueno Brandão": {
+   "codigo": "91",
+   "municipios": [
+    "Bueno Brandão",
+    "Munhoz"
+   ],
+   "distritos": []
+  },
+  "Buenópolis": {
+   "codigo": "92",
+   "municipios": [
+    "Augusto de Lima",
+    "Buenópolis",
+    "Joaquim Felício"
+   ],
+   "distritos": [
+    "Curimataí"
+   ]
+  },
+  "Buritis": {
+   "codigo": "93",
+   "municipios": [
+    "Buritis",
+    "Formoso"
+   ],
+   "distritos": [
+    "São Pedro do Passa-Três",
+    "Serra Bonita",
+    "Goiasminas"
+   ]
+  },
+  "Cabo Verde": {
+   "codigo": "95",
+   "municipios": [
+    "Cabo Verde",
+    "Divisa Nova"
+   ],
+   "distritos": [
+    "São Bartolomeu de Minas",
+    "Serra dos Lemes"
+   ]
+  },
+  "Cachoeira de Minas": {
+   "codigo": "97",
+   "municipios": [
+    "Cachoeira de Minas",
+    "Conceição dos Ouros"
+   ],
+   "distritos": [
+    "Itaim"
+   ]
+  },
+  "Caeté": {
+   "codigo": "45",
+   "municipios": [
+    "Caeté",
+    "Nova União",
+    "Taquaraçu de Minas"
+   ],
+   "distritos": [
+    "Antônio dos Santos",
+    "Morro Vermelho",
+    "Penedia",
+    "Roças Novas"
+   ]
+  },
+  "Caldas": {
+   "codigo": "103",
+   "municipios": [
+    "Caldas"
+   ],
+   "distritos": [
+    "Laranjeiras de Caldas",
+    "Santana de Caldas",
+    "São Pedro de Caldas"
+   ]
+  },
+  "Camanducaia": {
+   "codigo": "878",
+   "municipios": [
+    "Camanducaia",
+    "Itapeva"
+   ],
+   "distritos": [
+    "Monte Verde",
+    "São Mateus de Minas"
+   ]
+  },
+  "Cambuquira": {
+   "codigo": "107",
+   "municipios": [
+    "Cambuquira"
+   ],
+   "distritos": []
+  },
+  "Cambuí": {
+   "codigo": "106",
+   "municipios": [
+    "Bom Repouso",
+    "Cambuí",
+    "Córrego do Bom Jesus",
+    "Senador Amaral"
+   ],
+   "distritos": [
+    "Ponte Segura"
+   ]
+  },
+  "Campanha": {
+   "codigo": "109",
+   "municipios": [
+    "Campanha",
+    "Monsenhor Paulo"
+   ],
+   "distritos": []
+  },
+  "Campestre": {
+   "codigo": "110",
+   "municipios": [
+    "Bandeira do Sul",
+    "Campestre"
+   ],
+   "distritos": []
+  },
+  "Campina Verde": {
+   "codigo": "111",
+   "municipios": [
+    "Campina Verde"
+   ],
+   "distritos": [
+    "Honorópolis"
+   ]
+  },
+  "Campo Belo": {
+   "codigo": "112",
+   "municipios": [
+    "Aguanil",
+    "Campo Belo",
+    "Cristais",
+    "Santana do Jacaré"
+   ],
+   "distritos": [
+    "Porto dos Mendes"
+   ]
+  },
+  "Campos Altos": {
+   "codigo": "115",
+   "municipios": [
+    "Campos Altos",
+    "Santa Rosa da Serra"
+   ],
+   "distritos": [
+    "São Jerônimo dos Poções"
+   ]
+  },
+  "Campos Gerais": {
+   "codigo": "116",
+   "municipios": [
+    "Campo do Meio",
+    "Campos Gerais"
+   ],
+   "distritos": [
+    "Córrego do Ouro"
+   ]
+  },
+  "Candeias": {
+   "codigo": "120",
+   "municipios": [
+    "Candeias"
+   ],
+   "distritos": []
+  },
+  "Canápolis": {
+   "codigo": "118",
+   "municipios": [
+    "Canápolis",
+    "Centralina"
+   ],
+   "distritos": []
+  },
+  "Capelinha": {
+   "codigo": "123",
+   "municipios": [
+    "Água Boa",
+    "Angelândia",
+    "Capelinha"
+   ],
+   "distritos": [
+    "Palmeira de Resplendor"
+   ]
+  },
+  "Capinópolis": {
+   "codigo": "126",
+   "municipios": [
+    "Cachoeira Dourada",
+    "Capinópolis",
+    "Ipiaçu"
+   ],
+   "distritos": []
+  },
+  "Carandaí": {
+   "codigo": "132",
+   "municipios": [
+    "Capela Nova",
+    "Caranaíba",
+    "Carandaí"
+   ],
+   "distritos": [
+    "Hermilo Alves",
+    "Pedra do Sino"
+   ]
+  },
+  "Carangola": {
+   "codigo": "133",
+   "municipios": [
+    "Carangola",
+    "Faria Lemos",
+    "Fervedouro"
+   ],
+   "distritos": [
+    "Alvorada",
+    "Lacerdinha",
+    "Ponte Alta de Minas",
+    "Bom Jesus do Madeira",
+    "São Pedro do Glória"
+   ]
+  },
+  "Caratinga": {
+   "codigo": "134",
+   "municipios": [
+    "Bom Jesus do Galho",
+    "Caratinga",
+    "Córrego Novo",
+    "Entre-Folhas",
+    "Imbé de Minas",
+    "Piedade de Caratinga",
+    "Pingo-d'Água",
+    "Santa Bárbara do Leste",
+    "Santa Rita de Minas",
+    "Ubaporanga",
+    "Vargem Alegre"
+   ],
+   "distritos": [
+    "Passa-Dez",
+    "Quartel do Sacramento",
+    "Revés do Belém",
+    "Cordeiro de Minas",
+    "Dom Lara",
+    "Dom Modesto",
+    "Patrocínio de Caratinga",
+    "Santa Efigênia de Caratinga",
+    "Santa Luzia de Caratinga",
+    "Santo Antônio do Manhuaçu",
+    "São Cândido",
+    "São João do Jacutinga",
+    "Sapucaia",
+    "Manducas",
+    "São José do Batatal",
+    "São Sebastião do Batatal"
+   ]
+  },
+  "Carlos Chagas": {
+   "codigo": "137",
+   "municipios": [
+    "Carlos Chagas"
+   ],
+   "distritos": [
+    "Epaminondas Otôni",
+    "Presidente Pena"
+   ]
+  },
+  "Carmo da Mata": {
+   "codigo": "140",
+   "municipios": [
+    "Carmo da Mata"
+   ],
+   "distritos": []
+  },
+  "Carmo de Minas": {
+   "codigo": "141",
+   "municipios": [
+    "Carmo de Minas",
+    "Dom Viçoso"
+   ],
+   "distritos": []
+  },
+  "Carmo do Cajuru": {
+   "codigo": "142",
+   "municipios": [
+    "Carmo do Cajuru"
+   ],
+   "distritos": [
+    "São José dos Salgados"
+   ]
+  },
+  "Carmo do Paranaíba": {
+   "codigo": "143",
+   "municipios": [
+    "Carmo do Paranaíba"
+   ],
+   "distritos": [
+    "Quintinos"
+   ]
+  },
+  "Carmo do Rio Claro": {
+   "codigo": "144",
+   "municipios": [
+    "Carmo do Rio Claro",
+    "Conceição da Aparecida"
+   ],
+   "distritos": [
+    "Itaci"
+   ]
+  },
+  "Carmópolis de Minas": {
+   "codigo": "879",
+   "municipios": [
+    "Carmópolis de Minas"
+   ],
+   "distritos": []
+  },
+  "Cataguases": {
+   "codigo": "153",
+   "municipios": [
+    "Astolfo Dutra",
+    "Cataguases",
+    "Dona Eusébia",
+    "Itamarati de Minas",
+    "Santana de Cataguases"
+   ],
+   "distritos": [
+    "Santana do Campestre",
+    "Sobral Pinto",
+    "Aracati de Minas",
+    "Cataguarino",
+    "Glória de Cataguases",
+    "Sereno",
+    "Vista Alegre",
+    "São Manuel do Guaiaçu"
+   ]
+  },
+  "Caxambu": {
+   "codigo": "155",
+   "municipios": [
+    "Caxambu"
+   ],
+   "distritos": []
+  },
+  "Cláudio": {
+   "codigo": "166",
+   "municipios": [
+    "Cláudio"
+   ],
+   "distritos": [
+    "Monsenhor João Alexandre"
+   ]
+  },
+  "Conceição das Alagoas": {
+   "codigo": "172",
+   "municipios": [
+    "Conceição das Alagoas",
+    "Pirajuba"
+   ],
+   "distritos": [
+    "Poncianos"
+   ]
+  },
+  "Conceição do Mato Dentro": {
+   "codigo": "175",
+   "municipios": [
+    "Conceição do Mato Dentro",
+    "Congonhas do Norte",
+    "Dom Joaquim",
+    "Morro do Pilar"
+   ],
+   "distritos": [
+    "Brejaúba",
+    "Córregos",
+    "Costa Sena",
+    "Itacolomi",
+    "Ouro Fino do Mato Dentro",
+    "Santo Antônio do Norte",
+    "São Sebastião do Bom Sucesso",
+    "Tabuleiro do Mato Dentro",
+    "Gororós"
+   ]
+  },
+  "Conceição do Rio Verde": {
+   "codigo": "177",
+   "municipios": [
+    "Conceição do Rio Verde"
+   ],
+   "distritos": [
+    "Águas de Contendas"
+   ]
+  },
+  "Congonhas": {
+   "codigo": "180",
+   "municipios": [
+    "Congonhas"
+   ],
+   "distritos": [
+    "Alto Maranhão",
+    "Lobo Leite"
+   ]
+  },
+  "Conquista": {
+   "codigo": "182",
+   "municipios": [
+    "Conquista"
+   ],
+   "distritos": [
+    "Guaxima",
+    "Jubaí"
+   ]
+  },
+  "Conselheiro Lafaiete": {
+   "codigo": "183",
+   "municipios": [
+    "Casa Grande",
+    "Catas Altas da Noruega",
+    "Conselheiro Lafaiete",
+    "Cristiano Otôni",
+    "Itaverava",
+    "Lamim",
+    "Queluzito",
+    "Rio Espera",
+    "Santana dos Montes"
+   ],
+   "distritos": [
+    "Buarque de Macedo",
+    "São Caetano",
+    "Monsenhor Isidro",
+    "Piranguita",
+    "Rio Melo",
+    "Joselândia"
+   ]
+  },
+  "Conselheiro Pena": {
+   "codigo": "184",
+   "municipios": [
+    "Conselheiro Pena",
+    "Cuparaque",
+    "Goiabeira",
+    "Tumiritinga"
+   ],
+   "distritos": [
+    "Barra do Cuieté",
+    "Bueno",
+    "Cuieté Velho",
+    "Ferruginha",
+    "Penha do Norte",
+    "Aldeia",
+    "São Geraldo de Tumiritinga"
+   ]
+  },
+  "Contagem": {
+   "codigo": "79",
+   "municipios": [
+    "Contagem"
+   ],
+   "distritos": [
+    "Parque Industrial"
+   ]
+  },
+  "Coração de Jesus": {
+   "codigo": "775",
+   "municipios": [
+    "Coração de Jesus",
+    "Ibiaí",
+    "Lagoa dos Patos",
+    "São João da Lagoa",
+    "São João do Pacuí"
+   ],
+   "distritos": [
+    "Alvação",
+    "Aristides Batista",
+    "Luís Pires de Minas",
+    "Ponte dos Ciganos",
+    "São Geraldo",
+    "São Joaquim",
+    "Bom Jesus da Vereda",
+    "São Roberto de Minas",
+    "Santa da Pedra"
+   ]
+  },
+  "Corinto": {
+   "codigo": "191",
+   "municipios": [
+    "Corinto",
+    "Santo Hipólito"
+   ],
+   "distritos": [
+    "Beltrão",
+    "Contria",
+    "Senhora da Glória",
+    "Valo Fundo"
+   ]
+  },
+  "Coromandel": {
+   "codigo": "193",
+   "municipios": [
+    "Abadia dos Dourados",
+    "Coromandel"
+   ],
+   "distritos": [
+    "Alegre",
+    "Lagamar dos Coqueiros",
+    "Mateiro",
+    "Pântano de Santa Cruz",
+    "Santa Rosa dos Dourados"
+   ]
+  },
+  "Coronel Fabriciano": {
+   "codigo": "194",
+   "municipios": [
+    "Antônio Dias",
+    "Coronel Fabriciano"
+   ],
+   "distritos": [
+    "Hematita",
+    "Senador Melo Viana"
+   ]
+  },
+  "Cristina": {
+   "codigo": "205",
+   "municipios": [
+    "Cristina",
+    "Maria da Fé"
+   ],
+   "distritos": [
+    "Pintos Negreiros"
+   ]
+  },
+  "Cruzília": {
+   "codigo": "208",
+   "municipios": [
+    "Cruzília",
+    "Minduri"
+   ],
+   "distritos": []
+  },
+  "Curvelo": {
+   "codigo": "209",
+   "municipios": [
+    "Curvelo",
+    "Felixlândia",
+    "Inimutaba",
+    "Morro da Garça",
+    "Presidente Juscelino"
+   ],
+   "distritos": [
+    "Angueretá",
+    "J.K.",
+    "Santa Rita do Cedro",
+    "Tomás Gonzaga",
+    "São Geraldo do Salto",
+    "São José do Buriti"
+   ]
+  },
+  "Cássia": {
+   "codigo": "151",
+   "municipios": [
+    "Capetinga",
+    "Cássia",
+    "Delfinópolis"
+   ],
+   "distritos": [
+    "Goianases",
+    "Babilônia"
+   ]
+  },
+  "Diamantina": {
+   "codigo": "216",
+   "municipios": [
+    "Couto de Magalhães de Minas",
+    "Datas",
+    "Diamantina",
+    "Felício dos Santos",
+    "Gouveia",
+    "Monjolos",
+    "Presidente Kubitschek",
+    "São Gonçalo do Rio Preto",
+    "Senador Modestino Gonçalves"
+   ],
+   "distritos": [
+    "Conselheiro Mata",
+    "Desembargador Otôni",
+    "Extração",
+    "Guinda",
+    "Inhaí",
+    "Mendanha",
+    "Planalto de Minas",
+    "São João da Chapada",
+    "Senador Mourão",
+    "Sopa",
+    "Rodeador"
+   ]
+  },
+  "Divino": {
+   "codigo": "220",
+   "municipios": [
+    "Divino",
+    "Orizânia"
+   ],
+   "distritos": [
+    "Bom Jesus do Divino"
+   ]
+  },
+  "Divinópolis": {
+   "codigo": "223",
+   "municipios": [
+    "Divinópolis"
+   ],
+   "distritos": [
+    "Santo Antônio dos Campos"
+   ]
+  },
+  "Dores do Indaiá": {
+   "codigo": "232",
+   "municipios": [
+    "Dores do Indaiá",
+    "Estrela do Indaiá",
+    "Quartel Geral",
+    "Serra da Saudade"
+   ],
+   "distritos": [
+    "Baú",
+    "Quartel de São João"
+   ]
+  },
+  "Elói Mendes": {
+   "codigo": "236",
+   "municipios": [
+    "Elói Mendes"
+   ],
+   "distritos": []
+  },
+  "Entre Rios de Minas": {
+   "codigo": "239",
+   "municipios": [
+    "Desterro de Entre-Rios",
+    "Entre Rios de Minas",
+    "Jeceaba",
+    "São Brás do Suaçuí"
+   ],
+   "distritos": [
+    "Pereirinhas",
+    "São Sebastião do Gil",
+    "Serra do Camapuã",
+    "Bituri",
+    "Caetano Lopes"
+   ]
+  },
+  "Ervália": {
+   "codigo": "240",
+   "municipios": [
+    "Araponga",
+    "Ervália"
+   ],
+   "distritos": [
+    "Estêvão de Araújo"
+   ]
+  },
+  "Esmeraldas": {
+   "codigo": "241",
+   "municipios": [
+    "Esmeraldas"
+   ],
+   "distritos": [
+    "Andiroba",
+    "Melo Viana"
+   ]
+  },
+  "Espera Feliz": {
+   "codigo": "242",
+   "municipios": [
+    "Caiana",
+    "Caparaó",
+    "Espera Feliz"
+   ],
+   "distritos": [
+    "São José da Pedra Menina"
+   ]
+  },
+  "Espinosa": {
+   "codigo": "243",
+   "municipios": [
+    "Espinosa",
+    "Mamonas"
+   ],
+   "distritos": [
+    "Itamirim",
+    "Barrinha"
+   ]
+  },
+  "Estrela do Sul": {
+   "codigo": "248",
+   "municipios": [
+    "Cascalho Rico",
+    "Estrela do Sul",
+    "Grupiara"
+   ],
+   "distritos": [
+    "Chapada de Minas",
+    "Dolearina",
+    "Santa Rita da Estrela"
+   ]
+  },
+  "Eugenópolis": {
+   "codigo": "249",
+   "municipios": [
+    "Antônio Prado de Minas",
+    "Eugenópolis",
+    "Patrocínio do Muriaé"
+   ],
+   "distritos": [
+    "Gavião",
+    "Pinhotiba",
+    "Queirozes"
+   ]
+  },
+  "Extrema": {
+   "codigo": "251",
+   "municipios": [
+    "Extrema",
+    "Toledo"
+   ],
+   "distritos": []
+  },
+  "Ferros": {
+   "codigo": "259",
+   "municipios": [
+    "Carmésia",
+    "Ferros",
+    "Passabém",
+    "Santo Antônio do Rio Abaixo",
+    "São Sebastião do Rio Preto"
+   ],
+   "distritos": [
+    "Borba Gato",
+    "Cubas",
+    "Esmeraldas de Ferros",
+    "Santa Rita do Rio do Peixe",
+    "Santo Antônio da Fortaleza",
+    "Sete Cachoeiras"
+   ]
+  },
+  "Formiga": {
+   "codigo": "261",
+   "municipios": [
+    "Córrego Fundo",
+    "Formiga",
+    "Pimenta"
+   ],
+   "distritos": [
+    "Albertos",
+    "Baiões",
+    "Pontevila",
+    "Santo Hilário"
+   ]
+  },
+  "Francisco Sá": {
+   "codigo": "267",
+   "municipios": [
+    "Capitão Enéas",
+    "Francisco Sá"
+   ],
+   "distritos": [
+    "Caçarema",
+    "Santana da Serra",
+    "Canabrava",
+    "Catuni"
+   ]
+  },
+  "Frutal": {
+   "codigo": "271",
+   "municipios": [
+    "Comendador Gomes",
+    "Fronteira",
+    "Frutal",
+    "Planura"
+   ],
+   "distritos": [
+    "Santo Antônio do Rio Grande",
+    "Aparecida de Minas"
+   ]
+  },
+  "Galiléia": {
+   "codigo": "273",
+   "municipios": [
+    "Divino das Laranjeiras",
+    "Galiléia",
+    "São Geraldo do Baixio"
+   ],
+   "distritos": [
+    "Central de Santa Helena",
+    "Sapucaia do Norte"
+   ]
+  },
+  "Governador Valadares": {
+   "codigo": "105",
+   "municipios": [
+    "Alpercata",
+    "Frei Inocêncio",
+    "Governador Valadares",
+    "Marilac",
+    "Matias Lobato",
+    "Periquito",
+    "São Geraldo da Piedade",
+    "São José da Safira"
+   ],
+   "distritos": [
+    "Alto de Santa Helena",
+    "Baguari",
+    "Brejaubinha",
+    "Chonim de Cima",
+    "Chonin de Baixo",
+    "Derribadinha",
+    "Goiabal",
+    "Penha do Cassiano",
+    "Santo Antônio do Pontal",
+    "São José das Tronqueiras",
+    "São José do Itapinoã",
+    "São Vítor",
+    "Vila Nova Floresta",
+    "Pedra Corrida",
+    "São Sebastião do Baixio"
+   ]
+  },
+  "Grão-Mogol": {
+   "codigo": "278",
+   "municipios": [
+    "Botumirim",
+    "Cristália",
+    "Grão-Mogol",
+    "Josenópolis"
+   ],
+   "distritos": [
+    "Adão Colares",
+    "Santa Cruz de Botumirim",
+    "Barrocão"
+   ]
+  },
+  "Guanhães": {
+   "codigo": "280",
+   "municipios": [
+    "Dores de Guanhães",
+    "Guanhães",
+    "Senhora do Porto"
+   ],
+   "distritos": [
+    "Correntinho",
+    "Farias",
+    "Sapucaia de Guanhães",
+    "Taquaral de Guanhães",
+    "São José do Jacaré"
+   ]
+  },
+  "Guapé": {
+   "codigo": "281",
+   "municipios": [
+    "Guapé"
+   ],
+   "distritos": [
+    "Araúna"
+   ]
+  },
+  "Guarani": {
+   "codigo": "284",
+   "municipios": [
+    "Guarani",
+    "Piraúba"
+   ],
+   "distritos": []
+  },
+  "Guaranésia": {
+   "codigo": "283",
+   "municipios": [
+    "Guaranésia"
+   ],
+   "distritos": [
+    "Santa Cruz do Prata"
+   ]
+  },
+  "Guaxupé": {
+   "codigo": "287",
+   "municipios": [
+    "Guaxupé",
+    "São Pedro da União"
+   ],
+   "distritos": []
+  },
+  "Ibiraci": {
+   "codigo": "297",
+   "municipios": [
+    "Claraval",
+    "Ibiraci"
+   ],
+   "distritos": []
+  },
+  "Ibirité": {
+   "codigo": "114",
+   "municipios": [
+    "Ibirité",
+    "Mário Campos",
+    "Sarzedo"
+   ],
+   "distritos": [
+    "Parque Durval de Barros"
+   ]
+  },
+  "Ibiá": {
+   "codigo": "295",
+   "municipios": [
+    "Ibiá",
+    "Pratinha"
+   ],
+   "distritos": [
+    "Argenita",
+    "Tobati"
+   ]
+  },
+  "Igarapé": {
+   "codigo": "301",
+   "municipios": [
+    "Igarapé",
+    "São Joaquim de Bicas"
+   ],
+   "distritos": []
+  },
+  "Iguatama": {
+   "codigo": "303",
+   "municipios": [
+    "Iguatama"
+   ],
+   "distritos": []
+  },
+  "Inhapim": {
+   "codigo": "309",
+   "municipios": [
+    "Bugre",
+    "Dom Cavati",
+    "Iapu",
+    "Inhapim",
+    "São Domingos das Dores",
+    "São João do Oriente",
+    "São Sebastião do Anta"
+   ],
+   "distritos": [
+    "São Sebastião da Barra",
+    "Bom Jesus do Rio Preto",
+    "Itajutiba",
+    "Jerusalém",
+    "Macadame",
+    "Novo Horizonte de Inhapim",
+    "Santo Antônio do Alegre",
+    "São Tomé de Minas",
+    "Tabajara",
+    "Santa Maria do Baixio"
+   ]
+  },
+  "Ipanema": {
+   "codigo": "312",
+   "municipios": [
+    "Conceição de Ipanema",
+    "Ipanema",
+    "Pocrane",
+    "Taparuba"
+   ],
+   "distritos": [
+    "Açaraí",
+    "Barra da Figueira"
+   ]
+  },
+  "Ipatinga": {
+   "codigo": "313",
+   "municipios": [
+    "Ipaba",
+    "Ipatinga",
+    "Santana do Paraíso"
+   ],
+   "distritos": [
+    "Vale Verde de Minas",
+    "Barra Alegre"
+   ]
+  },
+  "Itabira": {
+   "codigo": "317",
+   "municipios": [
+    "Itabira",
+    "Itambé do Mato Dentro",
+    "Santa Maria de Itabira"
+   ],
+   "distritos": [
+    "Ipoema",
+    "Senhora do Carmo",
+    "Itauninha"
+   ]
+  },
+  "Itabirito": {
+   "codigo": "319",
+   "municipios": [
+    "Itabirito"
+   ],
+   "distritos": [
+    "Acuruí",
+    "Bação",
+    "São Gonçalo do Monte"
+   ]
+  },
+  "Itaguara": {
+   "codigo": "322",
+   "municipios": [
+    "Itaguara"
+   ],
+   "distritos": []
+  },
+  "Itajubá": {
+   "codigo": "324",
+   "municipios": [
+    "Delfim Moreira",
+    "Itajubá",
+    "Marmelópolis",
+    "Piranguçu",
+    "Wenceslau Braz"
+   ],
+   "distritos": [
+    "Barra",
+    "São José do Rio Manso",
+    "Itererê"
+   ]
+  },
+  "Itamarandiba": {
+   "codigo": "325",
+   "municipios": [
+    "Aricanduva",
+    "Carbonita",
+    "Itamarandiba"
+   ],
+   "distritos": [
+    "Contrato",
+    "Padre João Afonso",
+    "Penha de França"
+   ]
+  },
+  "Itambacuri": {
+   "codigo": "327",
+   "municipios": [
+    "Campanário",
+    "Frei Gaspar",
+    "Itambacuri",
+    "Jampruca",
+    "Nova Módica",
+    "Pescador",
+    "São José do Divino"
+   ],
+   "distritos": [
+    "Cachoeira do Aranã",
+    "Frei Serafim",
+    "Guarataia",
+    "São Sebastião do Barroso"
+   ]
+  },
+  "Itamogi": {
+   "codigo": "329",
+   "municipios": [
+    "Itamogi"
+   ],
+   "distritos": []
+  },
+  "Itamonte": {
+   "codigo": "330",
+   "municipios": [
+    "Alagoa",
+    "Itamonte"
+   ],
+   "distritos": []
+  },
+  "Itanhandu": {
+   "codigo": "331",
+   "municipios": [
+    "Itanhandu",
+    "Virgínia"
+   ],
+   "distritos": []
+  },
+  "Itanhomi": {
+   "codigo": "332",
+   "municipios": [
+    "Capitão Andrade",
+    "Itanhomi"
+   ],
+   "distritos": [
+    "Edgard Melo",
+    "São Francisco do Jataí"
+   ]
+  },
+  "Itapagipe": {
+   "codigo": "334",
+   "municipios": [
+    "Itapagipe",
+    "São Francisco de Sales"
+   ],
+   "distritos": []
+  },
+  "Itapecerica": {
+   "codigo": "335",
+   "municipios": [
+    "Camacho",
+    "Itapecerica",
+    "São Sebastião do Oeste"
+   ],
+   "distritos": [
+    "Lamounier",
+    "Marilândia",
+    "Neolândia"
+   ]
+  },
+  "Itaúna": {
+   "codigo": "338",
+   "municipios": [
+    "Itatiaiuçu",
+    "Itaúna"
+   ],
+   "distritos": [
+    "Santa Teresinha de Minas"
+   ]
+  },
+  "Ituiutaba": {
+   "codigo": "342",
+   "municipios": [
+    "Gurinhatã",
+    "Ituiutaba"
+   ],
+   "distritos": [
+    "Flor de Minas"
+   ]
+  },
+  "Itumirim": {
+   "codigo": "343",
+   "municipios": [
+    "Carrancas",
+    "Ingaí",
+    "Itumirim",
+    "Itutinga"
+   ],
+   "distritos": [
+    "Macuco de Minas"
+   ]
+  },
+  "Iturama": {
+   "codigo": "344",
+   "municipios": [
+    "Carneirinho",
+    "Iturama",
+    "Limeira do Oeste",
+    "União de Minas"
+   ],
+   "distritos": [
+    "Estrela da Barra",
+    "Fátima do Pontal",
+    "São Sebastião do Pontal",
+    "Alexandrita"
+   ]
+  },
+  "Jabuticatubas": {
+   "codigo": "346",
+   "municipios": [
+    "Jaboticatubas",
+    "Santana do Riacho"
+   ],
+   "distritos": [
+    "Almeida",
+    "Serra do Cipó"
+   ]
+  },
+  "Jacinto": {
+   "codigo": "347",
+   "municipios": [
+    "Jacinto",
+    "Jordânia",
+    "Salto da Divisa",
+    "Santa Maria do Salto",
+    "Santo Antônio do Jacinto"
+   ],
+   "distritos": [
+    "Avaí de Jacinto",
+    "Jaguarão",
+    "Estrela de Jordânia",
+    "Catajás"
+   ]
+  },
+  "Jacutinga": {
+   "codigo": "349",
+   "municipios": [
+    "Albertina",
+    "Jacutinga"
+   ],
+   "distritos": [
+    "São Sebastião dos Robertos",
+    "Sapucaí"
+   ]
+  },
+  "Jacuí": {
+   "codigo": "348",
+   "municipios": [
+    "Fortaleza de Minas",
+    "Jacuí"
+   ],
+   "distritos": []
+  },
+  "Janaúba": {
+   "codigo": "351",
+   "municipios": [
+    "Janaúba",
+    "Nova Porteirinha",
+    "Verdelândia"
+   ],
+   "distritos": [
+    "Barreiro da Raiz",
+    "Quem-quem",
+    "Vila Nova dos Poções"
+   ]
+  },
+  "Januária": {
+   "codigo": "352",
+   "municipios": [
+    "Bonito de Minas",
+    "Cônego Marinho",
+    "Itacarambi",
+    "Januária",
+    "Pedras de Maria da Cruz"
+   ],
+   "distritos": [
+    "Cruz dos Araújos",
+    "Olhos d'Água do Bom Jesus",
+    "Brejo do Amparo",
+    "Levinópolis",
+    "Pandeiros",
+    "Riacho da Cruz",
+    "São Joaquim",
+    "Tejuco",
+    "Várzea Bonita",
+    "São Pedro das Tabocas"
+   ]
+  },
+  "Jaíba": {
+   "codigo": "738",
+   "municipios": [
+    "Jaíba",
+    "Matias Cardoso"
+   ],
+   "distritos": [
+    "Rio Verde de Minas"
+   ]
+  },
+  "Jequeri": {
+   "codigo": "355",
+   "municipios": [
+    "Jequeri",
+    "Piedade de Ponte Nova",
+    "Urucânia"
+   ],
+   "distritos": [
+    "Piscamba",
+    "Pouso Alegre da Mata",
+    "São Sebastião do Grota",
+    "São Vicente do Grama",
+    "Bom Jesus de Cardosos"
+   ]
+  },
+  "Jequitinhonha": {
+   "codigo": "358",
+   "municipios": [
+    "Felisburgo",
+    "Jequitinhonha",
+    "Joaíma",
+    "Monte Formoso"
+   ],
+   "distritos": [
+    "Guaranilândia",
+    "São Pedro do Jequitinhonha",
+    "Giru"
+   ]
+  },
+  "João Monlevade": {
+   "codigo": "362",
+   "municipios": [
+    "João Monlevade"
+   ],
+   "distritos": []
+  },
+  "João Pinheiro": {
+   "codigo": "363",
+   "municipios": [
+    "Brasilândia de Minas",
+    "João Pinheiro"
+   ],
+   "distritos": [
+    "Caatinga",
+    "Canabrava",
+    "Luislândia do Oeste",
+    "Olhos-d'água do Oeste",
+    "Santa Luzia da Serra",
+    "Veredas"
+   ]
+  },
+  "Juatuba": {
+   "codigo": "740",
+   "municipios": [
+    "Florestal",
+    "Juatuba"
+   ],
+   "distritos": [
+    "Boa Vista da Serra"
+   ]
+  },
+  "Juiz de Fora": {
+   "codigo": "145",
+   "municipios": [
+    "Chácara",
+    "Coronel Pacheco",
+    "Juiz de Fora"
+   ],
+   "distritos": [
+    "Rosário de Minas",
+    "Sarandira",
+    "Torreões"
+   ]
+  },
+  "Lagoa Santa": {
+   "codigo": "148",
+   "municipios": [
+    "Lagoa Santa"
+   ],
+   "distritos": [
+    "Lagoinha de Fora",
+    "Lapinha"
+   ]
+  },
+  "Lagoa da Prata": {
+   "codigo": "372",
+   "municipios": [
+    "Japaraíba",
+    "Lagoa da Prata"
+   ],
+   "distritos": [
+    "Martins Guimarães"
+   ]
+  },
+  "Lajinha": {
+   "codigo": "377",
+   "municipios": [
+    "Chalé",
+    "Lajinha",
+    "São José do Mantimento"
+   ],
+   "distritos": [
+    "Penha do Coco",
+    "Professor Sperber",
+    "Palmeiras",
+    "Prata de Lajinha"
+   ]
+  },
+  "Lambari": {
+   "codigo": "378",
+   "municipios": [
+    "Jesuânia",
+    "Lambari",
+    "Olímpio Noronha"
+   ],
+   "distritos": []
+  },
+  "Lavras": {
+   "codigo": "382",
+   "municipios": [
+    "Ijaci",
+    "Lavras",
+    "Luminárias",
+    "Ribeirão Vermelho"
+   ],
+   "distritos": []
+  },
+  "Leopoldina": {
+   "codigo": "384",
+   "municipios": [
+    "Argirita",
+    "Leopoldina",
+    "Recreio"
+   ],
+   "distritos": [
+    "Abaíba",
+    "Piacatuba",
+    "Providência",
+    "Ribeiro Junqueira",
+    "Tebas",
+    "Angaturama",
+    "Conceição da Boa Vista"
+   ]
+  },
+  "Lima Duarte": {
+   "codigo": "386",
+   "municipios": [
+    "Lima Duarte",
+    "Olaria",
+    "Pedro Teixeira"
+   ],
+   "distritos": [
+    "Conceição da Ibitipoca",
+    "São Domingos da Bocaina",
+    "São José dos Lopes"
+   ]
+  },
+  "Luz": {
+   "codigo": "388",
+   "municipios": [
+    "Córrego Danta",
+    "Luz"
+   ],
+   "distritos": [
+    "Cachoeirinha",
+    "Esteios"
+   ]
+  },
+  "Machado": {
+   "codigo": "390",
+   "municipios": [
+    "Carvalhópolis",
+    "Machado"
+   ],
+   "distritos": [
+    "Douradinho"
+   ]
+  },
+  "Malacacheta": {
+   "codigo": "392",
+   "municipios": [
+    "Franciscópolis",
+    "Malacacheta",
+    "Setubinha"
+   ],
+   "distritos": [
+    "Antônio Ferreira",
+    "Jaguaritira",
+    "Junco de Minas",
+    "Santo Antônio do Mucuri",
+    "Palmeiras do Vale"
+   ]
+  },
+  "Manga": {
+   "codigo": "393",
+   "municipios": [
+    "Manga",
+    "Miravânia",
+    "São João das Missões"
+   ],
+   "distritos": [
+    "Nhandutiba"
+   ]
+  },
+  "Manhuaçu": {
+   "codigo": "394",
+   "municipios": [
+    "Luisburgo",
+    "Manhuaçu",
+    "Reduto",
+    "Santana do Manhuaçu",
+    "São João do Manhuaçu",
+    "Simonésia"
+   ],
+   "distritos": [
+    "Dom Correia",
+    "Palmeiras do Manhuaçu",
+    "Ponte do Silva",
+    "Realeza",
+    "São Pedro do Avaí",
+    "São Sebastião do Sacramento",
+    "Vilanova",
+    "Santa Filomena",
+    "Alegria",
+    "São Simão do Rio Preto"
+   ]
+  },
+  "Manhumirim": {
+   "codigo": "395",
+   "municipios": [
+    "Alto Caparaó",
+    "Alto Jequitibá",
+    "Durandé",
+    "Manhumirim",
+    "Martins Soares"
+   ],
+   "distritos": [
+    "Padre Júlio Maria",
+    "São João da Figueira",
+    "São José da Figueira",
+    "Pinheiro de Minas"
+   ]
+  },
+  "Mantena": {
+   "codigo": "396",
+   "municipios": [
+    "Central de Minas",
+    "Itabirinha",
+    "Mantena",
+    "Mendes Pimentel",
+    "Nova Belém",
+    "São Félix de Minas",
+    "São João do Manteninha"
+   ],
+   "distritos": [
+    "Floresta",
+    "Boa União de Itabirinha",
+    "Barra do Ariranha",
+    "Limeira de Mantena",
+    "Santo Antônio de Nova Belém"
+   ]
+  },
+  "Mar de Espanha": {
+   "codigo": "398",
+   "municipios": [
+    "Chiador",
+    "Mar de Espanha",
+    "Senador Cortes"
+   ],
+   "distritos": [
+    "Penha Longa",
+    "Engenho Novo",
+    "Saudade"
+   ]
+  },
+  "Mariana": {
+   "codigo": "400",
+   "municipios": [
+    "Diogo de Vasconcelos",
+    "Mariana"
+   ],
+   "distritos": [
+    "Águas Claras",
+    "Bandeirantes",
+    "Cachoeira do Brumado",
+    "Camargos",
+    "Cláudio Manuel",
+    "Furquim",
+    "Monsenhor Horta",
+    "Padre Viegas",
+    "Passagem de Mariana",
+    "Santa Rita Durão"
+   ]
+  },
+  "Martinho Campos": {
+   "codigo": "405",
+   "municipios": [
+    "Martinho Campos"
+   ],
+   "distritos": [
+    "Alberto Isaacson",
+    "Ibitira"
+   ]
+  },
+  "Mateus Leme": {
+   "codigo": "407",
+   "municipios": [
+    "Mateus Leme"
+   ],
+   "distritos": [
+    "Azurita",
+    "Serra Azul"
+   ]
+  },
+  "Matias Barbosa": {
+   "codigo": "408",
+   "municipios": [
+    "Belmiro Braga",
+    "Matias Barbosa",
+    "Santana do Deserto",
+    "Simão Pereira"
+   ],
+   "distritos": [
+    "Porto das Flores",
+    "São José das Três Ilhas"
+   ]
+  },
+  "Matozinhos": {
+   "codigo": "411",
+   "municipios": [
+    "Capim Branco",
+    "Matozinhos",
+    "Prudente de Morais"
+   ],
+   "distritos": [
+    "Mocambeiro"
+   ]
+  },
+  "Medina": {
+   "codigo": "414",
+   "municipios": [
+    "Comercinho",
+    "Itaobim",
+    "Medina"
+   ],
+   "distritos": [
+    "Água Branca de Minas",
+    "Tuparecê"
+   ]
+  },
+  "Mercês": {
+   "codigo": "416",
+   "municipios": [
+    "Mercês"
+   ],
+   "distritos": []
+  },
+  "Mesquita": {
+   "codigo": "417",
+   "municipios": [
+    "Braúnas",
+    "Joanésia",
+    "Mesquita"
+   ],
+   "distritos": [
+    "Barra Grande de Mesquita"
+   ]
+  },
+  "Minas Novas": {
+   "codigo": "418",
+   "municipios": [
+    "Berilo",
+    "Chapada do Norte",
+    "Francisco Badaró",
+    "Jenipapo de Minas",
+    "Minas Novas"
+   ],
+   "distritos": [
+    "Lelivéldia",
+    "Cachoeira do Norte",
+    "Granjas do Norte",
+    "Santa Rita do Araçuaí",
+    "São Sebastião da Boa Vista",
+    "Tocoiós de Minas",
+    "Baixa Quente",
+    "Cruzinha",
+    "Ribeirão da Folha"
+   ]
+  },
+  "Miradouro": {
+   "codigo": "421",
+   "municipios": [
+    "Miradouro",
+    "São Francisco do Glória",
+    "Vieiras"
+   ],
+   "distritos": [
+    "Santo Antônio do Glória"
+   ]
+  },
+  "Miraí": {
+   "codigo": "422",
+   "municipios": [
+    "Miraí",
+    "São Sebastião da Vargem Alegre"
+   ],
+   "distritos": [
+    "Dores da Vitória"
+   ]
+  },
+  "Montalvânia": {
+   "codigo": "427",
+   "municipios": [
+    "Juvenília",
+    "Montalvânia"
+   ],
+   "distritos": [
+    "Monte Rei",
+    "Porto Agrário",
+    "Capitânia",
+    "Pitarana",
+    "São Sebastião dos Poções"
+   ]
+  },
+  "Monte Alegre de Minas": {
+   "codigo": "428",
+   "municipios": [
+    "Monte Alegre de Minas"
+   ],
+   "distritos": []
+  },
+  "Monte Azul": {
+   "codigo": "429",
+   "municipios": [
+    "Gameleiras",
+    "Mato Verde",
+    "Monte Azul"
+   ],
+   "distritos": [
+    "Jacu das Piranhas",
+    "São João do Bonito"
+   ]
+  },
+  "Monte Belo": {
+   "codigo": "430",
+   "municipios": [
+    "Monte Belo"
+   ],
+   "distritos": [
+    "Juréia",
+    "Santa Cruz da Aparecida"
+   ]
+  },
+  "Monte Carmelo": {
+   "codigo": "431",
+   "municipios": [
+    "Douradoquara",
+    "Iraí de Minas",
+    "Monte Carmelo",
+    "Romaria"
+   ],
+   "distritos": []
+  },
+  "Monte Santo de Minas": {
+   "codigo": "432",
+   "municipios": [
+    "Arceburgo",
+    "Monte Santo de Minas"
+   ],
+   "distritos": [
+    "Milagre"
+   ]
+  },
+  "Monte Sião": {
+   "codigo": "434",
+   "municipios": [
+    "Monte Sião"
+   ],
+   "distritos": []
+  },
+  "Montes Claros": {
+   "codigo": "433",
+   "municipios": [
+    "Claro dos Poções",
+    "Glaucilândia",
+    "Itacambira",
+    "Juramento",
+    "Mirabela",
+    "Montes Claros",
+    "Patis"
+   ],
+   "distritos": [
+    "Vista Alegre",
+    "Muquém",
+    "Aparecida do Mundo Novo",
+    "Ermidinha",
+    "Miralta",
+    "Nova Esperança",
+    "Panorâmica",
+    "Santa Rosa de Lima",
+    "São João da Vereda",
+    "São Pedro da Garça",
+    "Vila Nova de Minas"
+   ]
+  },
+  "Morada Nova de Minas": {
+   "codigo": "435",
+   "municipios": [
+    "Biquinhas",
+    "Morada Nova de Minas"
+   ],
+   "distritos": [
+    "Frei Orlando"
+   ]
+  },
+  "Muriaé": {
+   "codigo": "439",
+   "municipios": [
+    "Laranjal",
+    "Muriaé",
+    "Rosário da Limeira"
+   ],
+   "distritos": [
+    "São João da Sapucaia",
+    "Belisário",
+    "Boa Família",
+    "Bom Jesus da Cachoeira",
+    "Itamuri",
+    "Pirapanema",
+    "Vermelho"
+   ]
+  },
+  "Mutum": {
+   "codigo": "440",
+   "municipios": [
+    "Mutum"
+   ],
+   "distritos": [
+    "Centenário",
+    "Imbiruçu",
+    "Ocidente",
+    "Roseiral",
+    "São Francisco do Humaitá"
+   ]
+  },
+  "Muzambinho": {
+   "codigo": "441",
+   "municipios": [
+    "Juruaia",
+    "Muzambinho"
+   ],
+   "distritos": []
+  },
+  "Nanuque": {
+   "codigo": "443",
+   "municipios": [
+    "Nanuque",
+    "Serra dos Aimorés"
+   ],
+   "distritos": [
+    "Vila Pereira"
+   ]
+  },
+  "Natércia": {
+   "codigo": "444",
+   "municipios": [
+    "Conceição das Pedras",
+    "Heliodora",
+    "Natércia"
+   ],
+   "distritos": []
+  },
+  "Nepomuceno": {
+   "codigo": "446",
+   "municipios": [
+    "Nepomuceno"
+   ],
+   "distritos": [
+    "Nazaré de Minas",
+    "Santo Antônio do Cruzeiro"
+   ]
+  },
+  "Nova Era": {
+   "codigo": "447",
+   "municipios": [
+    "Bela Vista de Minas",
+    "Nova Era"
+   ],
+   "distritos": []
+  },
+  "Nova Lima": {
+   "codigo": "188",
+   "municipios": [
+    "Nova Lima",
+    "Raposos",
+    "Rio Acima"
+   ],
+   "distritos": []
+  },
+  "Nova Ponte": {
+   "codigo": "450",
+   "municipios": [
+    "Nova Ponte",
+    "Santa Juliana"
+   ],
+   "distritos": [
+    "Zelândia"
+   ]
+  },
+  "Nova Resende": {
+   "codigo": "451",
+   "municipios": [
+    "Bom Jesus da Penha",
+    "Nova Resende"
+   ],
+   "distritos": [
+    "Petúnia"
+   ]
+  },
+  "Nova Serrana": {
+   "codigo": "452",
+   "municipios": [
+    "Araújos",
+    "Nova Serrana",
+    "Perdigão"
+   ],
+   "distritos": [
+    "Boa Vista de Minas"
+   ]
+  },
+  "Novo Cruzeiro": {
+   "codigo": "453",
+   "municipios": [
+    "Caraí",
+    "Catuji",
+    "Itaipé",
+    "Novo Cruzeiro"
+   ],
+   "distritos": [
+    "Marambainha",
+    "Maranhão",
+    "Ponto do Marambaia",
+    "Lufa",
+    "Novilhona",
+    "Queixada"
+   ]
+  },
+  "Oliveira": {
+   "codigo": "456",
+   "municipios": [
+    "Oliveira",
+    "São Francisco de Paula"
+   ],
+   "distritos": [
+    "Morro do Ferro"
+   ]
+  },
+  "Ouro Branco": {
+   "codigo": "459",
+   "municipios": [
+    "Ouro Branco"
+   ],
+   "distritos": []
+  },
+  "Ouro Fino": {
+   "codigo": "460",
+   "municipios": [
+    "Inconfidentes",
+    "Ouro Fino"
+   ],
+   "distritos": [
+    "Crisólia",
+    "São José do Mato Dentro"
+   ]
+  },
+  "Ouro Preto": {
+   "codigo": "461",
+   "municipios": [
+    "Ouro Preto"
+   ],
+   "distritos": [
+    "Amarantina",
+    "Antônio Pereira",
+    "Cachoeira do Campo",
+    "Engenheiro Correia",
+    "Glaura",
+    "Lavras Novas",
+    "Miguel Burnier",
+    "Rodrigo Silva",
+    "Santa Rita de Ouro Preto",
+    "Santo Antônio do Leite",
+    "Santo Antônio do Salto",
+    "São Bartolomeu"
+   ]
+  },
+  "Palma": {
+   "codigo": "467",
+   "municipios": [
+    "Barão do Monte Alto",
+    "Palma"
+   ],
+   "distritos": [
+    "Cachoeira Alegre",
+    "Silveira Carvalho",
+    "Cisneiros",
+    "Itapiruçu"
+   ]
+  },
+  "Paracatu": {
+   "codigo": "470",
+   "municipios": [
+    "Paracatu"
+   ],
+   "distritos": []
+  },
+  "Paraguaçu": {
+   "codigo": "472",
+   "municipios": [
+    "Fama",
+    "Paraguaçu"
+   ],
+   "distritos": [
+    "Guaipava"
+   ]
+  },
+  "Paraisópolis": {
+   "codigo": "473",
+   "municipios": [
+    "Consolação",
+    "Gonçalves",
+    "Paraisópolis",
+    "Sapucaí-Mirim"
+   ],
+   "distritos": [
+    "Costas"
+   ]
+  },
+  "Paraopeba": {
+   "codigo": "474",
+   "municipios": [
+    "Araçaí",
+    "Caetanópolis",
+    "Cordisburgo",
+    "Paraopeba"
+   ],
+   "distritos": [
+    "Lagoa Bonita"
+   ]
+  },
+  "Pará de Minas": {
+   "codigo": "471",
+   "municipios": [
+    "Igaratinga",
+    "Onça de Pitangui",
+    "Pará de Minas",
+    "Pequi",
+    "São Gonçalo do Pará",
+    "São José da Varginha"
+   ],
+   "distritos": [
+    "Antunes",
+    "Ascenção",
+    "Carioca",
+    "Córrego do Barro",
+    "Tavares de Minas",
+    "Torneiros"
+   ]
+  },
+  "Passa Quatro": {
+   "codigo": "476",
+   "municipios": [
+    "Passa Quatro"
+   ],
+   "distritos": [
+    "Pé do Morro",
+    "Pinheirinhos"
+   ]
+  },
+  "Passa Tempo": {
+   "codigo": "477",
+   "municipios": [
+    "Passa Tempo",
+    "Piracema"
+   ],
+   "distritos": []
+  },
+  "Passos": {
+   "codigo": "479",
+   "municipios": [
+    "Passos",
+    "São João Batista do Glória"
+   ],
+   "distritos": []
+  },
+  "Patos de Minas": {
+   "codigo": "480",
+   "municipios": [
+    "Lagoa Formosa",
+    "Patos de Minas",
+    "São Gonçalo do Abaeté",
+    "Varjão de Minas"
+   ],
+   "distritos": [
+    "Limeira de Minas",
+    "Monjolinho de Minas",
+    "Bom Sucesso de Patos",
+    "Chumbo",
+    "Major Porto",
+    "Pilar",
+    "Pindaíbas",
+    "Santana de Patos",
+    "Canoeiros"
+   ]
+  },
+  "Patrocínio": {
+   "codigo": "481",
+   "municipios": [
+    "Cruzeiro da Fortaleza",
+    "Guimarânia",
+    "Patrocínio",
+    "Serra do Salitre"
+   ],
+   "distritos": [
+    "Brejo Bonito",
+    "Salitre de Minas",
+    "Santa Luzia dos Barros",
+    "São João da Serra Negra",
+    "Silvano",
+    "Catiara"
+   ]
+  },
+  "Pedra Azul": {
+   "codigo": "487",
+   "municipios": [
+    "Águas Vermelhas",
+    "Cachoeira de Pajeú",
+    "Divisa Alegre",
+    "Pedra Azul"
+   ],
+   "distritos": [
+    "Itamarati",
+    "Machado Mineiro",
+    "Araçaji de Minas"
+   ]
+  },
+  "Pedralva": {
+   "codigo": "491",
+   "municipios": [
+    "Pedralva",
+    "São José do Alegre"
+   ],
+   "distritos": []
+  },
+  "Pedro Leopoldo": {
+   "codigo": "210",
+   "municipios": [
+    "Confins",
+    "Pedro Leopoldo"
+   ],
+   "distritos": [
+    "Doutor Lund",
+    "Fidalgo",
+    "Lagoa de Santo Antônio",
+    "Vera Cruz de Minas"
+   ]
+  },
+  "Perdizes": {
+   "codigo": "498",
+   "municipios": [
+    "Pedrinópolis",
+    "Perdizes"
+   ],
+   "distritos": []
+  },
+  "Perdões": {
+   "codigo": "499",
+   "municipios": [
+    "Cana Verde",
+    "Perdões"
+   ],
+   "distritos": []
+  },
+  "Peçanha": {
+   "codigo": "486",
+   "municipios": [
+    "Cantagalo",
+    "Coroaci",
+    "Frei Lagonegro",
+    "Nacip Raydan",
+    "Peçanha",
+    "São José do Jacuri",
+    "São Pedro do Suaçui",
+    "Virgolândia"
+   ],
+   "distritos": [
+    "Conceição de Tronqueiras",
+    "São Sebastião do Bugre",
+    "Santa Teresa do Bonito",
+    "Divino de Virgolândia"
+   ]
+  },
+  "Piranga": {
+   "codigo": "508",
+   "municipios": [
+    "Piranga",
+    "Porto Firme",
+    "Presidente Bernardes",
+    "Senhora de Oliveira"
+   ],
+   "distritos": [
+    "Pinheiros Altos",
+    "Santo Antônio do Pirapetinga"
+   ]
+  },
+  "Pirapetinga": {
+   "codigo": "511",
+   "municipios": [
+    "Estrela-d'Alva",
+    "Pirapetinga"
+   ],
+   "distritos": [
+    "Água Viva",
+    "Caiapó",
+    "Valão Quente"
+   ]
+  },
+  "Pirapora": {
+   "codigo": "512",
+   "municipios": [
+    "Buritizeiro",
+    "Jequitaí",
+    "Pirapora"
+   ],
+   "distritos": [
+    "Cachoeira do Manteiga",
+    "Paredão de Minas",
+    "Sambaíba de Minas"
+   ]
+  },
+  "Pitangui": {
+   "codigo": "514",
+   "municipios": [
+    "Conceição do Pará",
+    "Leandro Ferreira",
+    "Maravilhas",
+    "Papagaios",
+    "Pitangui"
+   ],
+   "distritos": []
+  },
+  "Piumhi": {
+   "codigo": "515",
+   "municipios": [
+    "Capitólio",
+    "Doresópolis",
+    "Piumhi"
+   ],
+   "distritos": []
+  },
+  "Pompéu": {
+   "codigo": "520",
+   "municipios": [
+    "Pompéu"
+   ],
+   "distritos": [
+    "Silva Campos"
+   ]
+  },
+  "Ponte Nova": {
+   "codigo": "521",
+   "municipios": [
+    "Acaiaca",
+    "Amparo da Serra",
+    "Barra Longa",
+    "Guaraciaba",
+    "Oratórios",
+    "Ponte Nova",
+    "Rio Doce",
+    "Santa Cruz do Escalvado"
+   ],
+   "distritos": [
+    "Padre Felisberto",
+    "Bonfim da Barra",
+    "Felipe dos Santos",
+    "Rosário do Pontal",
+    "Vau-Açu",
+    "São Sebastião do Soberbo",
+    "Zito Soares"
+   ]
+  },
+  "Porteirinha": {
+   "codigo": "522",
+   "municipios": [
+    "Catuti",
+    "Pai Pedro",
+    "Porteirinha",
+    "Riacho dos Machados",
+    "Serranópolis de Minas"
+   ],
+   "distritos": [
+    "Barreiro Branco",
+    "Gorutuba",
+    "Mocambinho",
+    "Mulungu de Minas",
+    "Paciência",
+    "Serra Branca de Minas",
+    "Tocandira"
+   ]
+  },
+  "Pouso Alegre": {
+   "codigo": "525",
+   "municipios": [
+    "Congonhal",
+    "Estiva",
+    "Pouso Alegre",
+    "Senador José Bento"
+   ],
+   "distritos": [
+    "Pântano dos Rosas",
+    "São José do Pântano"
+   ]
+  },
+  "Poço Fundo": {
+   "codigo": "517",
+   "municipios": [
+    "Poço Fundo"
+   ],
+   "distritos": [
+    "Paiolinho"
+   ]
+  },
+  "Poços de Caldas": {
+   "codigo": "518",
+   "municipios": [
+    "Poços de Caldas"
+   ],
+   "distritos": []
+  },
+  "Prados": {
+   "codigo": "527",
+   "municipios": [
+    "Dores de Campos",
+    "Prados"
+   ],
+   "distritos": []
+  },
+  "Prata": {
+   "codigo": "528",
+   "municipios": [
+    "Prata"
+   ],
+   "distritos": [
+    "Jardinésia",
+    "Patrimônio"
+   ]
+  },
+  "Pratápolis": {
+   "codigo": "529",
+   "municipios": [
+    "Itaú de Minas",
+    "Pratápolis"
+   ],
+   "distritos": []
+  },
+  "Presidente Olegário": {
+   "codigo": "534",
+   "municipios": [
+    "Lagamar",
+    "Lagoa Grande",
+    "Presidente Olegário"
+   ],
+   "distritos": [
+    "São Brás de Minas",
+    "Galena",
+    "Ponte Firme",
+    "Santiago de Minas"
+   ]
+  },
+  "Raul Soares": {
+   "codigo": "540",
+   "municipios": [
+    "Raul Soares",
+    "Vermelho Novo"
+   ],
+   "distritos": [
+    "Bicuíba",
+    "Santana do Tabuleiro",
+    "São Sebastião do Óculo",
+    "São Vicente da Estrela",
+    "Vermelho Velho"
+   ]
+  },
+  "Resende Costa": {
+   "codigo": "542",
+   "municipios": [
+    "Coronel Xavier Chaves",
+    "Resende Costa"
+   ],
+   "distritos": [
+    "Jacarandira"
+   ]
+  },
+  "Resplendor": {
+   "codigo": "543",
+   "municipios": [
+    "Itueta",
+    "Resplendor",
+    "Santa Rita do Itueto"
+   ],
+   "distritos": [
+    "Quatituba",
+    "Bom Pastor",
+    "Calixto",
+    "Campo Alegre de Minas",
+    "Independência",
+    "Nicolândia",
+    "Alto Pião",
+    "São José do Itueto"
+   ]
+  },
+  "Ribeirão das Neves": {
+   "codigo": "231",
+   "municipios": [
+    "Ribeirão das Neves"
+   ],
+   "distritos": [
+    "Justinópolis"
+   ]
+  },
+  "Rio Casca": {
+   "codigo": "549",
+   "municipios": [
+    "Rio Casca",
+    "Santo Antônio do Grama",
+    "São Pedro dos Ferros"
+   ],
+   "distritos": [
+    "Jurumirim",
+    "Águas Férreas"
+   ]
+  },
+  "Rio Novo": {
+   "codigo": "554",
+   "municipios": [
+    "Goianá",
+    "Piau",
+    "Rio Novo"
+   ],
+   "distritos": []
+  },
+  "Rio Paranaíba": {
+   "codigo": "555",
+   "municipios": [
+    "Arapuá",
+    "Rio Paranaíba"
+   ],
+   "distritos": [
+    "Abaeté dos Mendes"
+   ]
+  },
+  "Rio Pardo de Minas": {
+   "codigo": "556",
+   "municipios": [
+    "Montezuma",
+    "Rio Pardo de Minas",
+    "Santo Antônio do Retiro",
+    "Vargem Grande do Rio Pardo"
+   ],
+   "distritos": [
+    "Serra Nova"
+   ]
+  },
+  "Rio Piracicaba": {
+   "codigo": "557",
+   "municipios": [
+    "Rio Piracicaba"
+   ],
+   "distritos": [
+    "Conceição de Piracicaba",
+    "Padre Pinto"
+   ]
+  },
+  "Rio Pomba": {
+   "codigo": "558",
+   "municipios": [
+    "Rio Pomba",
+    "Silveirânia",
+    "Tabuleiro"
+   ],
+   "distritos": []
+  },
+  "Rio Preto": {
+   "codigo": "559",
+   "municipios": [
+    "Rio Preto",
+    "Santa Bárbara do Monte Verde",
+    "Santa Rita de Jacutinga"
+   ],
+   "distritos": [
+    "São Sebastião do Barreado",
+    "Itaboca"
+   ]
+  },
+  "Rio Vermelho": {
+   "codigo": "560",
+   "municipios": [
+    "Rio Vermelho"
+   ],
+   "distritos": [
+    "Pedra Menina"
+   ]
+  },
+  "Sabará": {
+   "codigo": "567",
+   "municipios": [
+    "Sabará"
+   ],
+   "distritos": [
+    "Carvalho de Brito",
+    "Mestre Caetano",
+    "Ravena"
+   ]
+  },
+  "Sabinópolis": {
+   "codigo": "568",
+   "municipios": [
+    "Materlândia",
+    "Sabinópolis"
+   ],
+   "distritos": [
+    "Euxenita",
+    "Quilombo"
+   ]
+  },
+  "Sacramento": {
+   "codigo": "569",
+   "municipios": [
+    "Sacramento"
+   ],
+   "distritos": [
+    "Desemboque"
+   ]
+  },
+  "Salinas": {
+   "codigo": "570",
+   "municipios": [
+    "Fruta de Leite",
+    "Novorizonte",
+    "Padre Carvalho",
+    "Rubelita",
+    "Salinas",
+    "Santa Cruz de Salinas"
+   ],
+   "distritos": [
+    "Ferreirópolis",
+    "Nova Matrona"
+   ]
+  },
+  "Santa Bárbara": {
+   "codigo": "572",
+   "municipios": [
+    "Catas Altas",
+    "Santa Bárbara",
+    "São Gonçalo do Rio Abaixo"
+   ],
+   "distritos": [
+    "Barra Feliz",
+    "Brumal",
+    "Conceição do Rio Acima",
+    "Florália"
+   ]
+  },
+  "Santa Luzia": {
+   "codigo": "245",
+   "municipios": [
+    "Santa Luzia"
+   ],
+   "distritos": [
+    "São Benedito"
+   ]
+  },
+  "Santa Maria do Suaçuí": {
+   "codigo": "582",
+   "municipios": [
+    "José Raydan",
+    "Santa Maria do Suaçuí",
+    "São Sebastião do Maranhão"
+   ],
+   "distritos": [
+    "Brejo de Minas",
+    "Glucínio",
+    "Poaia",
+    "Mãe dos Homens",
+    "Santo Antônio dos Araújos"
+   ]
+  },
+  "Santa Rita de Caldas": {
+   "codigo": "592",
+   "municipios": [
+    "Ipuiúna",
+    "Santa Rita de Caldas"
+   ],
+   "distritos": [
+    "Pião",
+    "São Bento de Caldas"
+   ]
+  },
+  "Santa Rita do Sapucaí": {
+   "codigo": "596",
+   "municipios": [
+    "Santa Rita do Sapucaí",
+    "São Sebastião da Bela Vista"
+   ],
+   "distritos": []
+  },
+  "Santa Vitória": {
+   "codigo": "598",
+   "municipios": [
+    "Santa Vitória"
+   ],
+   "distritos": [
+    "Chaveslândia",
+    "Perdilândia"
+   ]
+  },
+  "Santo Antônio do Monte": {
+   "codigo": "604",
+   "municipios": [
+    "Pedra do Indaiá",
+    "Santo Antônio do Monte"
+   ],
+   "distritos": []
+  },
+  "Santos Dumont": {
+   "codigo": "607",
+   "municipios": [
+    "Aracitaba",
+    "Ewbank da Câmara",
+    "Oliveira Fortes",
+    "Paiva",
+    "Santos Dumont"
+   ],
+   "distritos": [
+    "Conceição do Formoso",
+    "Dores do Paraibuna",
+    "Mantiqueira",
+    "São João da Serra"
+   ]
+  },
+  "Senador Firmino": {
+   "codigo": "657",
+   "municipios": [
+    "Brás Pires",
+    "Dores do Turvo",
+    "Senador Firmino"
+   ],
+   "distritos": []
+  },
+  "Serro": {
+   "codigo": "671",
+   "municipios": [
+    "Alvorada de Minas",
+    "Santo Antônio do Itambé",
+    "Serra Azul de Minas",
+    "Serro"
+   ],
+   "distritos": [
+    "Itapanhoacanga",
+    "Deputado Augusto Clementino",
+    "Milho Verde",
+    "Pedro Lessa",
+    "São Gonçalo do Rio das Pedras"
+   ]
+  },
+  "Sete Lagoas": {
+   "codigo": "672",
+   "municipios": [
+    "Baldim",
+    "Cachoeira da Prata",
+    "Fortuna de Minas",
+    "Funilândia",
+    "Inhaúma",
+    "Jequitibá",
+    "Santana de Pirapama",
+    "Sete Lagoas"
+   ],
+   "distritos": [
+    "Amanda",
+    "São Vicente",
+    "Doutor Campolina",
+    "Fechados",
+    "Silva Xavier"
+   ]
+  },
+  "Silvianópolis": {
+   "codigo": "674",
+   "municipios": [
+    "Espírito Santo do Dourado",
+    "São João da Mata",
+    "Silvianópolis",
+    "Turvolândia"
+   ],
+   "distritos": []
+  },
+  "São Domingos do Prata": {
+   "codigo": "610",
+   "municipios": [
+    "Dionísio",
+    "São Domingos do Prata",
+    "São José do Goiabal"
+   ],
+   "distritos": [
+    "Baixa Verde",
+    "Conceição de Minas",
+    "Cônego João Pio",
+    "Ilhéus do Prata",
+    "Juiraçu",
+    "Santana do Alfié",
+    "Vargem Linda"
+   ]
+  },
+  "São Francisco": {
+   "codigo": "611",
+   "municipios": [
+    "Icaraí de Minas",
+    "Pintópolis",
+    "São Francisco"
+   ],
+   "distritos": [
+    "Vila Acari",
+    "Lapa do Espírito Santo",
+    "Morro",
+    "Santa Isabel de Minas"
+   ]
+  },
+  "São Gonçalo do Sapucaí": {
+   "codigo": "620",
+   "municipios": [
+    "Careaçu",
+    "Cordislândia",
+    "São Gonçalo do Sapucaí"
+   ],
+   "distritos": [
+    "Ferreiras",
+    "Ribeiros"
+   ]
+  },
+  "São Gotardo": {
+   "codigo": "621",
+   "municipios": [
+    "Matutina",
+    "São Gotardo"
+   ],
+   "distritos": [
+    "Abaeté dos Venâncios",
+    "Funchal",
+    "Guarda dos Ferreiros",
+    "São José da Bela Vista"
+   ]
+  },
+  "São João Del-Rei": {
+   "codigo": "625",
+   "municipios": [
+    "Conceição da Barra de Minas",
+    "Lagoa Dourada",
+    "Nazareno",
+    "Ritápolis",
+    "Santa Cruz de Minas",
+    "São João del-Rei",
+    "São Tiago",
+    "Tiradentes"
+   ],
+   "distritos": [
+    "Arcângelo",
+    "Emboabas",
+    "Rio das Mortes",
+    "São Gonçalo do Amarante",
+    "São Sebastião da Vitória",
+    "Mercês de Água Limpa",
+    "Caixa D'Água da Esperança",
+    "Elvas"
+   ]
+  },
+  "São João Evangelista": {
+   "codigo": "628",
+   "municipios": [
+    "Coluna",
+    "Paulistas",
+    "São João Evangelista"
+   ],
+   "distritos": [
+    "Nélson de Sena",
+    "São Geraldo do Baguari"
+   ]
+  },
+  "São João Nepomuceno": {
+   "codigo": "629",
+   "municipios": [
+    "Descoberto",
+    "Rochedo de Minas",
+    "São João Nepomuceno"
+   ],
+   "distritos": [
+    "Carlos Alves",
+    "Ituí",
+    "Roça Grande",
+    "Taruaçu"
+   ]
+  },
+  "São João da Ponte": {
+   "codigo": "624",
+   "municipios": [
+    "Ibiracatu",
+    "Lontra",
+    "São João da Ponte",
+    "Varzelândia"
+   ],
+   "distritos": [
+    "Bonança",
+    "Campo Alegre de Minas",
+    "Umbuzeiro",
+    "Condado do Norte",
+    "Olímpio Campos",
+    "Santo Antônio da Boa Vista",
+    "Simão Campos",
+    "Brejo do Mutambal",
+    "Campo Redondo"
+   ]
+  },
+  "São João do Paraíso": {
+   "codigo": "627",
+   "municipios": [
+    "Ninheira",
+    "São João do Paraíso"
+   ],
+   "distritos": []
+  },
+  "São Lourenço": {
+   "codigo": "637",
+   "municipios": [
+    "Pouso Alto",
+    "São Lourenço",
+    "São Sebastião do Rio Verde",
+    "Soledade de Minas"
+   ],
+   "distritos": [
+    "Santana do Capivari"
+   ]
+  },
+  "São Romão": {
+   "codigo": "642",
+   "municipios": [
+    "Santa Fé de Minas",
+    "São Romão"
+   ],
+   "distritos": [
+    "Ribanceira"
+   ]
+  },
+  "São Roque de Minas": {
+   "codigo": "643",
+   "municipios": [
+    "São Roque de Minas",
+    "Vargem Bonita"
+   ],
+   "distritos": [
+    "São José do Barreiro",
+    "Serra da Canastra"
+   ]
+  },
+  "São Sebastião do Paraíso": {
+   "codigo": "647",
+   "municipios": [
+    "São Sebastião do Paraíso",
+    "São Tomás de Aquino"
+   ],
+   "distritos": [
+    "Guardinha"
+   ]
+  },
+  "Taiobeiras": {
+   "codigo": "680",
+   "municipios": [
+    "Berizal",
+    "Curral de Dentro",
+    "Indaiabira",
+    "Taiobeiras"
+   ],
+   "distritos": [
+    "Maristela de Minas",
+    "Barra de Alegria"
+   ]
+  },
+  "Tarumirim": {
+   "codigo": "684",
+   "municipios": [
+    "Alvarenga",
+    "Engenheiro Caldas",
+    "Fernandes Tourinho",
+    "Sobrália",
+    "Tarumirim"
+   ],
+   "distritos": [
+    "Divino do Traíra",
+    "São José do Acácio",
+    "Senhora da Penha",
+    "Plautino Soares",
+    "Café-Mirim",
+    "São Vicente do Rio Doce",
+    "Taruaçu de Minas",
+    "Vai-Volta"
+   ]
+  },
+  "Teixeiras": {
+   "codigo": "685",
+   "municipios": [
+    "Pedra do Anta",
+    "Teixeiras"
+   ],
+   "distritos": []
+  },
+  "Teófilo Otoni": {
+   "codigo": "686",
+   "municipios": [
+    "Ataléia",
+    "Ladainha",
+    "Novo Oriente de Minas",
+    "Ouro Verde de Minas",
+    "Pavão",
+    "Poté",
+    "Teófilo Otoni"
+   ],
+   "distritos": [
+    "Fidelândia",
+    "Novo Horizonte",
+    "Concórdia do Mucuri",
+    "Sucanga",
+    "Valão",
+    "Crispim Jacques",
+    "Mucuri",
+    "Pedro Versiani",
+    "Rio Pretinho",
+    "Topázio"
+   ]
+  },
+  "Timóteo": {
+   "codigo": "687",
+   "municipios": [
+    "Jaguaraçu",
+    "Marliéria",
+    "Timóteo"
+   ],
+   "distritos": [
+    "Lagoa de Pau",
+    "Cachoeira do Vale"
+   ]
+  },
+  "Tiros": {
+   "codigo": "689",
+   "municipios": [
+    "Tiros"
+   ],
+   "distritos": [
+    "Canastrão"
+   ]
+  },
+  "Tombos": {
+   "codigo": "692",
+   "municipios": [
+    "Pedra Dourada",
+    "Tombos"
+   ],
+   "distritos": [
+    "Água Santa de Minas",
+    "Catuné"
+   ]
+  },
+  "Três Corações": {
+   "codigo": "693",
+   "municipios": [
+    "São Bento Abade",
+    "São Tomé das Letras",
+    "Três Corações"
+   ],
+   "distritos": []
+  },
+  "Três Marias": {
+   "codigo": "58",
+   "municipios": [
+    "Três Marias"
+   ],
+   "distritos": [
+    "Andrequicé"
+   ]
+  },
+  "Três Pontas": {
+   "codigo": "694",
+   "municipios": [
+    "Santana da Vargem",
+    "Três Pontas"
+   ],
+   "distritos": [
+    "Pontalete"
+   ]
+  },
+  "Tupaciguara": {
+   "codigo": "696",
+   "municipios": [
+    "Araporã",
+    "Tupaciguara"
+   ],
+   "distritos": []
+  },
+  "Turmalina": {
+   "codigo": "697",
+   "municipios": [
+    "José Gonçalves de Minas",
+    "Leme do Prado",
+    "Turmalina",
+    "Veredinha"
+   ],
+   "distritos": [
+    "Caçaratiba",
+    "Mendonça"
+   ]
+  },
+  "Uberaba": {
+   "codigo": "701",
+   "municipios": [
+    "Água Comprida",
+    "Campo Florido",
+    "Delta",
+    "Uberaba",
+    "Veríssimo"
+   ],
+   "distritos": []
+  },
+  "Uberlândia": {
+   "codigo": "702",
+   "municipios": [
+    "Uberlândia"
+   ],
+   "distritos": [
+    "Cruzeiro dos Peixotos",
+    "Martinésia",
+    "Miraporanga",
+    "Tapuirama"
+   ]
+  },
+  "Ubá": {
+   "codigo": "699",
+   "municipios": [
+    "Divinésia",
+    "Guidoval",
+    "Rodeiro",
+    "Tocantins",
+    "Ubá"
+   ],
+   "distritos": [
+    "Diamante de Ubá",
+    "Miragaia",
+    "Ubari"
+   ]
+  },
+  "Unaí": {
+   "codigo": "704",
+   "municipios": [
+    "Cabeceira Grande",
+    "Unaí"
+   ],
+   "distritos": [
+    "Palmital de Minas",
+    "Garapuava",
+    "Palmeirinha",
+    "Pedras de Marilândia",
+    "Ruralminas",
+    "Santo Antônio do Boqueirão"
+   ]
+  },
+  "Varginha": {
+   "codigo": "707",
+   "municipios": [
+    "Carmo da Cachoeira",
+    "Varginha"
+   ],
+   "distritos": [
+    "Palmital do Cervo"
+   ]
+  },
+  "Vazante": {
+   "codigo": "710",
+   "municipios": [
+    "Guarda-Mor",
+    "Vazante"
+   ],
+   "distritos": [
+    "Claro de Minas"
+   ]
+  },
+  "Vespasiano": {
+   "codigo": "290",
+   "municipios": [
+    "São José da Lapa",
+    "Vespasiano"
+   ],
+   "distritos": []
+  },
+  "Virginópolis": {
+   "codigo": "718",
+   "municipios": [
+    "Divinolândia de Minas",
+    "Gonzaga",
+    "Santa Efigênia de Minas",
+    "Sardoá",
+    "Virginópolis"
+   ],
+   "distritos": [
+    "Conceição da Brejaúba"
+   ]
+  },
+  "Visconde do Rio Branco": {
+   "codigo": "720",
+   "municipios": [
+    "Guiricema",
+    "São Geraldo",
+    "Visconde do Rio Branco"
+   ],
+   "distritos": [
+    "Tuiutinga",
+    "Vilas Boas",
+    "Monte Celeste"
+   ]
+  },
+  "Viçosa": {
+   "codigo": "713",
+   "municipios": [
+    "Cajuri",
+    "Canaã",
+    "Coimbra",
+    "Paula Cândido",
+    "São Miguel do Anta",
+    "Viçosa"
+   ],
+   "distritos": [
+    "Paraguai",
+    "Airões",
+    "Cachoeira de Santa Cruz",
+    "São José do Triunfo",
+    "Silvestre"
+   ]
+  },
+  "Várzea da Palma": {
+   "codigo": "708",
+   "municipios": [
+    "Lassance",
+    "Várzea da Palma"
+   ],
+   "distritos": [
+    "Guaicuí"
+   ]
+  }
+ },
+ "falhas": []
+}
