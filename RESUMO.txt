@@ -1,13 +1,13 @@
-2016 | 366 dias | fds 105 | feriados 13 | recesso 12 | portaria 4 | uteis sem local 232 | por comarca 227 a 232 | comarcas com feriado local 296 de 298 | populacao de 2016
-2017 | 365 dias | fds 105 | feriados 14 | recesso 12 | portaria 1 | uteis sem local 233 | por comarca 228 a 233 | comarcas com feriado local 296 de 298 | populacao de 2017
-2018 | 365 dias | fds 104 | feriados 13 | recesso 11 | portaria 2 | uteis sem local 235 | por comarca 228 a 235 | comarcas com feriado local 296 de 298 | populacao de 2018
-2019 | 365 dias | fds 104 | feriados 10 | recesso 10 | portaria 1 | uteis sem local 240 | por comarca 233 a 240 | comarcas com feriado local 296 de 298 | populacao de 2019
-2020 | 366 dias | fds 104 | feriados 14 | recesso 11 | portaria 10 | uteis sem local 227 | por comarca 216 a 227 | comarcas com feriado local 297 de 298 | populacao de 2020
-2021 | 365 dias | fds 104 | feriados 13 | recesso 13 | portaria 4 | uteis sem local 231 | por comarca 221 a 231 | comarcas com feriado local 297 de 298 | populacao de 2021
-2022 | 365 dias | fds 105 | feriados 12 | recesso 13 | portaria 7 | uteis sem local 228 | por comarca 220 a 228 | comarcas com feriado local 297 de 298 | populacao de 2022
-2023 | 365 dias | fds 105 | feriados 14 | recesso 12 | portaria 4 | uteis sem local 230 | por comarca 224 a 229 | comarcas com feriado local 298 de 298 | populacao de 2022
-2024 | 366 dias | fds 104 | feriados 11 | recesso 11 | portaria 4 | uteis sem local 236 | por comarca 232 a 236 | comarcas com feriado local 298 de 298 | populacao de 2024
-2025 | 365 dias | fds 104 | feriados 12 | recesso 10 | portaria 3 | uteis sem local 236 | por comarca 229 a 234 | comarcas com feriado local 298 de 298 | populacao de 2025
-2026 | 365 dias | fds 104 | feriados 15 | recesso 11 | portaria 3 | uteis sem local 232 | por comarca 227 a 231 | comarcas com feriado local 298 de 298 | populacao de 2026
-2027 | 365 dias | fds 104 | feriados 13 | recesso 13 | portaria 0 | uteis sem local 235 | por comarca 231 a 235 | comarcas com feriado local 262 de 298 | populacao de 2026 | Corpus Christi PARCIAL: 37
-2028 | 366 dias | fds 106 | feriados 15 | recesso 11 | portaria 0 | uteis sem local 234 | por comarca 234 a 234 | comarcas com feriado local 0 de 298 | populacao de 2026
+2016 | 366 dias | fds 105 | nacionais 6 | estaduais 7 | recesso 12 | portaria 4 | uteis sem municipal 232 | por comarca 227 a 232 | comarcas com feriado municipal 296 de 298 | Corpus Christi em 277 | populacao de 2016
+2017 | 365 dias | fds 105 | nacionais 7 | estaduais 7 | recesso 12 | portaria 1 | uteis sem municipal 233 | por comarca 228 a 233 | comarcas com feriado municipal 296 de 298 | Corpus Christi em 279 | populacao de 2017
+2018 | 365 dias | fds 104 | nacionais 7 | estaduais 6 | recesso 11 | portaria 2 | uteis sem municipal 235 | por comarca 228 a 235 | comarcas com feriado municipal 296 de 298 | Corpus Christi em 283 | populacao de 2018
+2019 | 365 dias | fds 104 | nacionais 4 | estaduais 6 | recesso 10 | portaria 1 | uteis sem municipal 240 | por comarca 233 a 240 | comarcas com feriado municipal 296 de 298 | Corpus Christi em 282 | populacao de 2019
+2020 | 366 dias | fds 104 | nacionais 7 | estaduais 7 | recesso 11 | portaria 10 | uteis sem municipal 227 | por comarca 216 a 227 | comarcas com feriado municipal 297 de 298 | Corpus Christi em 283 | populacao de 2020
+2021 | 365 dias | fds 104 | nacionais 6 | estaduais 7 | recesso 13 | portaria 4 | uteis sem municipal 231 | por comarca 221 a 231 | comarcas com feriado municipal 297 de 298 | Corpus Christi em 287 | populacao de 2021
+2022 | 365 dias | fds 105 | nacionais 5 | estaduais 7 | recesso 13 | portaria 7 | uteis sem municipal 228 | por comarca 220 a 228 | comarcas com feriado municipal 297 de 298 | Corpus Christi em 289 | populacao de 2022
+2023 | 365 dias | fds 105 | nacionais 7 | estaduais 7 | recesso 12 | portaria 4 | uteis sem municipal 230 | por comarca 224 a 229 | comarcas com feriado municipal 298 de 298 | Corpus Christi em 290 | populacao de 2022
+2024 | 366 dias | fds 104 | nacionais 5 | estaduais 6 | recesso 11 | portaria 4 | uteis sem municipal 236 | por comarca 232 a 236 | comarcas com feriado municipal 298 de 298 | Corpus Christi em 290 | populacao de 2024
+2025 | 365 dias | fds 104 | nacionais 5 | estaduais 7 | recesso 10 | portaria 3 | uteis sem municipal 236 | por comarca 229 a 234 | comarcas com feriado municipal 298 de 298 | Corpus Christi em 290 | populacao de 2025
+2026 | 365 dias | fds 104 | nacionais 8 | estaduais 7 | recesso 11 | portaria 3 | uteis sem municipal 232 | por comarca 227 a 231 | comarcas com feriado municipal 298 de 298 | Corpus Christi em 289 | populacao de 2026
+2027 | 365 dias | fds 104 | nacionais 6 | estaduais 7 | recesso 13 | portaria 0 | uteis sem municipal 235 | por comarca 231 a 235 | comarcas com feriado municipal 262 de 298 | Corpus Christi em 37 | populacao de 2026 | Corpus Christi PARCIAL: 37
+2028 | 366 dias | fds 106 | nacionais 8 | estaduais 7 | recesso 11 | portaria 0 | uteis sem municipal 234 | por comarca 234 a 234 | comarcas com feriado municipal 0 de 298 | Corpus Christi em 0 | populacao de 2026

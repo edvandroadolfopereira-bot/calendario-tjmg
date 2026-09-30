@@ -12,7 +12,7 @@ Bases (todas oficiais, baixadas por baixar.py e coletar_guia.py):
 Criterio: dia util = segunda a sexta que a fonte nao registra como feriado, recesso, ponto
 facultativo ou suspensao de expediente. CPC, art. 216: sao feriados, para efeito forense, os
 sabados, os domingos e os dias em que nao haja expediente forense.
-Entrada "Comarca - descricao" e' feriado local; entrada sem comarca vale para todo o Estado.
+Entrada "Comarca - descricao" e' feriado municipal; entrada sem comarca vale para todo o Estado.
 
 Saidas: docs/ (dados, servidos pelo GitHub Pages) e, se existir nesta maquina, a pasta do site
 (pagina, dados de reserva, sitemap). Saida 0 fez, 1 falha de conferencia (nada e' gravado).
@@ -56,14 +56,27 @@ def limpar(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
+# Feriados nacionais: Lei 662/1949, art. 1o, na redacao da Lei 10.607/2002 (1/1, 21/4, 1/5, 7/9, 2/11,
+# 15/11, 25/12), Lei 6.802/1980 (12/10) e Lei 14.759/2023 (20/11). Conferido no Planalto em 30/09/2026.
+NACIONAIS = ("confraternizacao universal", "tiradentes", "dia do trabalho", "independencia do brasil",
+             "nossa senhora aparecida", "finados", "proclamacao da republica", "consciencia negra")
+# Feriados forenses da Justica mineira: a propria fonte os fundamenta na LC estadual 59/2001 e na Res. 458/2004
+ESTADUAIS = ("carnaval", "cinzas", "quarta feira santa", "quinta feira santa", "paixao de cristo", "dia da justica")
+
+
 def categoria(desc):
-    """F feriado; R recesso forense (LC 59/2001, art. 313); P ponto facultativo ou suspensao por portaria."""
+    """N feriado nacional; E feriado forense estadual; R recesso forense (LC 59/2001, art. 313);
+    P ponto facultativo ou suspensao por portaria do TJMG; ? entrada que a regra nao conhece."""
     d = norm(desc)
     if re.search(r"portaria|funcionario publico|servidor publico", d):
         return "P"
+    if any(n in d for n in NACIONAIS) or d.startswith("natal"):
+        return "N"
     if d.startswith("susp") or d.startswith("vespera"):
         return "R"
-    return "F"
+    if any(e in d for e in ESTADUAIS):
+        return "E"
+    return "?"
 
 
 def ler(caminho, ano):
@@ -105,13 +118,13 @@ def calcular(ano, comarcas, gerais, locais):
     todos = list(dias_do_ano(ano))
     fds = sum(1 for d in todos if d.weekday() >= 5)
     cat = {k: categoria(" ".join(v)) for k, v in gerais.items()}
-    por_cat = {c: sum(1 for k in gerais if cat[k] == c and semana(ano, k)) for c in "FRP"}
+    por_cat = {c: sum(1 for k in gerais if cat[k] == c and semana(ano, k)) for c in "NERP"}
     g = sum(por_cat.values())
     linhas = []
     for c in comarcas:
         loc = locais.get(c, {})
         ls = sum(1 for k in loc if semana(ano, k) and k not in gerais)
-        linhas.append({"comarca": c, "corridos": len(todos), "fds": fds, "F": por_cat["F"], "R": por_cat["R"],
+        linhas.append({"comarca": c, "corridos": len(todos), "fds": fds, "N": por_cat["N"], "E": por_cat["E"], "R": por_cat["R"],
                        "P": por_cat["P"], "locais": ls, "uteis": len(todos) - fds - g - ls,
                        "nao_uteis": fds + g + ls})
     return linhas, cat
@@ -141,6 +154,9 @@ def conferir(ano, comarcas, gerais, locais, linhas):
                     n += 1
         if n != l["uteis"] or l["uteis"] + l["nao_uteis"] != l["corridos"]:
             erros.append("contagem divergente em %s: %d x %d" % (l["comarca"], n, l["uteis"]))
+    for k, v in gerais.items():
+        if categoria(" ".join(v)) == "?":
+            erros.append("entrada estadual que a regra de classificacao nao conhece, em %s: %s" % (k, v))
     for nome in ("Natal", "Tiradentes", "Finados"):
         if not any(nome in " ".join(v) for v in gerais.values()):
             erros.append("feriado geral ausente na leitura: " + nome)
@@ -255,7 +271,7 @@ PAGINA = r"""<!doctype html>
 <link rel="canonical" href="https://gruponomos.com/calendario-tjmg.html">
 <link rel="icon" href="/assets/favicon.ico">
 <style>
-:root{--fundo:#F7F4EF;--tinta:#1F1820;--ouro:#B59A63;--faixa:#353036;--fds:#ddd6cc;--F:#b5523b;--R:#6d4c41;--P:#7a4a8c;--L:#2f5d8a}
+:root{--fundo:#F7F4EF;--tinta:#1F1820;--ouro:#B59A63;--faixa:#353036;--fds:#ddd6cc;--N:#b5523b;--E:#c77d2e;--R:#6d4c41;--P:#7a4a8c;--L:#2f5d8a}
 *{box-sizing:border-box}
 body{margin:0;background:var(--fundo);color:var(--tinta);font:17px/1.6 Georgia,"Times New Roman",serif}
 header{background:var(--faixa);color:#fff;padding:24px 16px}
@@ -289,8 +305,8 @@ select:focus,input:focus,th button:focus{outline:3px solid var(--ouro);outline-o
 .mes th{color:#5d545a;font-weight:600;padding:2px}
 .mes td{padding:5px 0;border:1px solid #efe9df}
 td.fds{background:var(--fds)}
-td.F,td.R,td.P,td.L{color:#fff;font-weight:700}
-td.F{background:var(--F)}td.R{background:var(--R)}td.P{background:var(--P)}td.L{background:var(--L)}
+td.N,td.E,td.R,td.P,td.L{color:#fff;font-weight:700}
+td.N{background:var(--N)}td.E{background:var(--E)}td.R{background:var(--R)}td.P{background:var(--P)}td.L{background:var(--L)}
 .rolagem{overflow-x:auto}
 table.dados{border-collapse:collapse;width:100%;font:15px Arial,sans-serif;background:#fff}
 table.dados th,table.dados td{border:1px solid #d8cfc2;padding:6px 8px;text-align:right}
@@ -300,7 +316,7 @@ table.dados tfoot td{font-weight:700;background:#f4efe6}
 th button{all:unset;cursor:pointer;font-weight:700}
 th button::after{content:" \2195";color:#8b8086}
 #lista{font:15px/1.5 Arial,sans-serif;padding-left:20px}
-.aviso{background:#fff;border-left:4px solid var(--F);padding:10px 14px;font:15px/1.5 Arial,sans-serif;margin:12px 0}
+.aviso{background:#fff;border-left:4px solid var(--N);padding:10px 14px;font:15px/1.5 Arial,sans-serif;margin:12px 0}
 .destaque{background:#fff;border-left:4px solid var(--ouro);padding:10px 14px;font:16px/1.5 Arial,sans-serif;margin:12px 0}
 #mapa{display:block;width:100%;max-width:860px;height:auto;margin:0 auto;background:#fff;border:1px solid #d8cfc2}
 #mapa path{stroke:#fff;stroke-width:.5;cursor:pointer}
@@ -339,7 +355,7 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
 <div class="cartoes" id="resumo" aria-live="polite"></div>
 <div id="alerta"></div>
 <div id="abrangencia"></div>
-<div class="legenda" aria-hidden="true"><span>Dia útil</span><span style="--c:var(--fds)">Sábado ou domingo</span><span style="--c:var(--F)">Feriado em todo o Estado</span><span style="--c:var(--R)">Recesso forense</span><span style="--c:var(--P)">Ponto facultativo ou suspensão por portaria</span><span style="--c:var(--L)">Feriado local da comarca</span></div>
+<div class="legenda" aria-hidden="true"><span>Dia útil</span><span style="--c:var(--fds)">Sábado ou domingo</span><span style="--c:var(--N)">Feriado nacional</span><span style="--c:var(--E)">Feriado estadual (Justiça mineira)</span><span style="--c:var(--R)">Recesso forense (estadual)</span><span style="--c:var(--P)">Ponto facultativo ou suspensão por portaria do TJMG</span><span style="--c:var(--L)">Feriado municipal da comarca</span></div>
 <div class="meses" id="meses"></div>
 <h3>Dias não úteis além de sábados e domingos</h3>
 <ul id="lista"></ul>
@@ -352,13 +368,14 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
 <th><button type="button" data-k="0">Comarca</button></th><th><button type="button" data-k="1">Municípios</button></th>
 <th><button type="button" data-k="2">População</button></th><th><button type="button" data-k="3">Dias corridos</button></th>
 <th><button type="button" data-k="4">Dias úteis</button></th><th><button type="button" data-k="5">Dias não úteis</button></th>
-<th><button type="button" data-k="6">Feriados locais em dia de semana</button></th></tr></thead><tbody></tbody></table></div>
+<th><button type="button" data-k="6">Feriados municipais em dia de semana</button></th></tr></thead><tbody></tbody></table></div>
 
 <h2>Como a conta é feita</h2>
 <p class="nota">Dia útil, aqui, é o dia de segunda a sexta que a página do TJMG não registra como feriado, recesso, ponto facultativo ou suspensão de expediente. Todo o resto é dia não útil. Dias corridos são todos os dias do ano, 365 ou 366. Feriado que cai em sábado ou domingo não reduz a contagem, porque o dia já não era útil.</p>
 <p class="nota"><strong>Ponto facultativo também conta como dia não útil.</strong> O Código de Processo Civil, no art. 216, trata como feriado, para efeito forense, além dos declarados em lei, os sábados, os domingos e os dias em que não haja expediente forense. No TJMG, os pontos facultativos e as pontes de feriado são fixados por portaria e aparecem na fonte como suspensão de expediente, com o número da portaria; o Dia do Funcionário Público entra do mesmo modo. Nesta página eles têm cor própria e contagem separada: em <span class="v-ano"></span>, <span id="n-portaria"></span>.</p>
-<p class="nota"><strong>O que cada cor conta.</strong> Feriado em todo o Estado: os nacionais e os da Justiça mineira, como Carnaval, Semana Santa e Dia da Justiça. Recesso forense: de 20 de dezembro a 6 de janeiro. Ponto facultativo ou suspensão por portaria: o que o Tribunal fixa ano a ano. Feriado local: aniversário da cidade, padroeiro e Corpus Christi, que o TJMG registra comarca por comarca.</p>
-<p class="nota"><strong>Anos futuros ficam incompletos por um tempo.</strong> O TJMG registra os feriados locais e as portarias aos poucos. Enquanto o registro de um ano não termina, a contagem de dias úteis daquele ano fica maior do que será no fim. A página avisa, no alto, quando o ano escolhido está nessa situação, e os dados são lidos de novo no TJMG toda semana.</p>
+<p class="nota"><strong>Nacional, estadual e municipal.</strong> <em>Feriado nacional</em> é o que a lei federal declara: 1º de janeiro, 21 de abril, 1º de maio, 7 de setembro, 2 de novembro, 15 de novembro e 25 de dezembro (Lei 662/1949, art. 1º, na redação da Lei 10.607/2002), 12 de outubro (Lei 6.802/1980) e 20 de novembro (Lei 14.759/2023). <em>Feriado estadual</em>, aqui, é o feriado forense da Justiça mineira, que o TJMG fundamenta na Lei Complementar estadual 59/2001 e na Resolução 458/2004: segunda e terça de Carnaval, Quarta-feira de Cinzas, quarta, quinta e sexta da Semana Santa e o Dia da Justiça, em 8 de dezembro. O <em>recesso forense</em>, de 20 de dezembro a 6 de janeiro, também é estadual (LC 59/2001, art. 313). <em>Ponto facultativo ou suspensão por portaria</em> é o que o Tribunal fixa ano a ano. <em>Feriado municipal</em> é o que vale só na comarca: aniversário da cidade, padroeiro e demais dias de guarda declarados em lei do município.</p>
+<p class="nota"><strong>Corpus Christi não é feriado nacional.</strong> Ele não está entre as datas que a lei federal declara. A Lei 9.093/1995, art. 2º, diz que os feriados religiosos são os dias de guarda declarados em lei municipal, até quatro por município. Por isso o TJMG registra Corpus Christi comarca por comarca, junto dos feriados municipais, e não na lista que vale para todo o Estado. <span id="nota-cc"></span></p>
+<p class="nota"><strong>Anos futuros ficam incompletos por um tempo.</strong> O TJMG registra os feriados municipais e as portarias aos poucos. Enquanto o registro de um ano não termina, a contagem de dias úteis daquele ano fica maior do que será no fim. A página avisa, no alto, quando o ano escolhido está nessa situação, e os dados são lidos de novo no TJMG toda semana.</p>
 <p class="nota"><strong>Prazo processual não é só dia útil.</strong> O curso do prazo fica suspenso de 20 de dezembro a 20 de janeiro (CPC, art. 220), mas o expediente volta em 7 de janeiro: por isso os dias de 7 a 20 de janeiro aparecem aqui como úteis. A contagem de um prazo segue a lei processual e a intimação do próprio processo.</p>
 <p class="nota"><strong>Horas de atendimento.</strong> A conta de horas multiplica os dias úteis pelo horário de atendimento ao público nos fóruns, das __H1__h às __H2__h, seis horas por dia. É uma medida de abrangência, e não inclui plantão, atendimento eletrônico nem expediente interno.</p>
 <p class="nota"><strong>Mapa e comarcas:</strong> a composição de cada comarca vem da consulta "Municípios e Distritos Integrantes" do <a href="https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/pesquisa.do" target="_blank" rel="noopener">Guia Judiciário do TJMG</a>, feita comarca por comarca<span id="lido-mapa"></span>: cada um dos 853 municípios em uma só comarca. O mapa mostra a divisão atual, inclusive nos anos anteriores. Os limites municipais são da malha do IBGE, em traçado simplificado, que serve para localizar e não para medir divisa.</p>
@@ -373,7 +390,7 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
   var REMOTO = "__REMOTO__", HORAS = __H2__ - __H1__, CAL = window.NOMOS_CAL = window.NOMOS_CAL || {}, origem = {};
   var MESES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
   var SEM = ["domingo","segunda-feira","terça-feira","quarta-feira","quinta-feira","sexta-feira","sábado"];
-  var NOMECAT = { F: "feriado", R: "recesso forense", P: "ponto facultativo ou suspensão por portaria", L: "feriado local" };
+  var NOMECAT = { N: "feriado nacional", E: "feriado estadual", R: "recesso forense", P: "ponto facultativo ou suspensão por portaria", L: "feriado municipal" };
   var NIVEL = ["Mesorregião", "Microrregião", "Região intermediária", "Região imediata"];
   var CORES = ["#8c6d31","#2f5d8a","#b5523b","#5b8c5a","#7a4a8c","#c9a227","#3d8b8b","#a05a7a","#6d4c41","#90a955","#4a6fa5","#d08c60","#555b6e","#c2b280"];
   var ANO, D, DIAS, porNome, min, max, porU, M, doComarca = {}, colPop, anoPop;
@@ -395,7 +412,7 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
 
   /* conta a partir dos feriados; serve para o calendario e para conferir a tabela calculada na geracao */
   function contar(loc) {
-    var r = { uteis: 0, fds: 0, F: 0, R: 0, P: 0, locais: 0, mes: [] };
+    var r = { uteis: 0, fds: 0, N: 0, E: 0, R: 0, P: 0, locais: 0, mes: [] };
     for (var m = 0; m < 12; m++) {
       var u = 0, n = new Date(ANO, m + 1, 0).getDate();
       for (var d = 1; d <= n; d++) {
@@ -483,22 +500,25 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
     $("lido").textContent = "Dados de " + ANO + " lidos no TJMG em " + D.lido + ". O ano tem " + DIAS + " dias corridos em todas as comarcas.";
     $("csv").href = (origem[a] || "/") + "calendario-tjmg-" + ANO + ".csv";
     var av = "";
-    if (D.nl === 0) av = "Para " + ANO + ", o TJMG ainda não registrou nenhum feriado local. Os números abaixo contam só os feriados estaduais e o recesso, e vão diminuir quando o registro for feito.";
-    else if (D.cc) av = "O registro de " + ANO + " no TJMG ainda está incompleto: Corpus Christi (" + D.cc[0].slice(3) + "/" + D.cc[0].slice(0, 2) + "/" + ANO + ") aparece em " + D.cc[1] + " das " + D.comarcas.length + " comarcas, e " + (D.comarcas.length - D.nl) + " comarcas estão sem nenhum feriado local. A contagem vai diminuir quando o registro terminar.";
+    if (D.nl === 0) av = "Para " + ANO + ", o TJMG ainda não registrou nenhum feriado municipal. Os números abaixo contam só os feriados estaduais e o recesso, e vão diminuir quando o registro for feito.";
+    else if (D.cc) av = "O registro de " + ANO + " no TJMG ainda está incompleto: Corpus Christi (" + D.cc[0].slice(3) + "/" + D.cc[0].slice(0, 2) + "/" + ANO + ") aparece em " + D.cc[1] + " das " + D.comarcas.length + " comarcas, e " + (D.comarcas.length - D.nl) + " comarcas estão sem nenhum feriado municipal. A contagem vai diminuir quando o registro terminar.";
     if (base.P === 0) av += (av ? " " : "") + "Ainda não há ponto facultativo nem suspensão por portaria registrados para " + ANO + ".";
     $("alerta-ano").innerHTML = av ? '<p class="aviso">' + av + "</p>" : "";
     $("n-portaria").textContent = base.P ? "são " + plural(base.P, "dia", "dias") + " de semana nessa situação" : "a fonte ainda não registra nenhum";
+    $("nota-cc").textContent = D.ncc ? "Em " + ANO + ", a fonte traz Corpus Christi em " + D.ncc + " das " + D.comarcas.length + " comarcas" +
+      (D.semcc.length && D.semcc.length <= 15 ? "; não traz em " + D.semcc.join(", ") + "." : ".") : "Em " + ANO + ", a fonte ainda não traz Corpus Christi em nenhuma comarca.";
     var popMG = M.m.reduce(function (s, p) { return s + pop(p); }, 0);
     $("estado").innerHTML = cartao(DIAS, "dias corridos") + cartao(base.fds, "sábados e domingos") +
-      cartao(base.F, "feriados estaduais em dia de semana") + cartao(base.R, "dias de recesso forense em dia de semana") +
+      cartao(base.N, "feriados nacionais em dia de semana") + cartao(base.E, "feriados estaduais em dia de semana") +
+      cartao(base.R, "dias de recesso forense em dia de semana") +
       cartao(base.P, "pontos facultativos e suspensões por portaria") +
-      cartao(base.uteis, "dias úteis antes dos feriados locais") + cartao(D.comarcas.length, "comarcas, em 853 municípios") +
+      cartao(base.uteis, "dias úteis antes dos feriados municipais") + cartao(D.comarcas.length, "comarcas, em 853 municípios") +
       cartao(mil(popMG), "habitantes em Minas Gerais (" + fontePop() + ")");
-    $("faixa").textContent = "Com os feriados locais, as comarcas ficam entre " + min + " e " + max + " dias úteis (" + (DIAS - max) + " a " + (DIAS - min) +
+    $("faixa").textContent = "Com os feriados municipais, as comarcas ficam entre " + min + " e " + max + " dias úteis (" + (DIAS - max) + " a " + (DIAS - min) +
       " não úteis), o que dá de " + mil(min * HORAS) + " a " + mil(max * HORAS) + " horas de atendimento ao público no ano. Distribuição: " +
       Object.keys(porU).sort().reverse().map(function (u) { return u + " dias úteis em " + plural(porU[u], "comarca", "comarcas"); }).join("; ") + ".";
     var antes = sel.value;
-    sel.innerHTML = '<option value="">Todo o Estado (sem feriado local)</option>' +
+    sel.innerHTML = '<option value="">Todo o Estado (sem feriado municipal)</option>' +
       D.comarcas.map(function (c) { return '<option value="' + texto(c[0]) + '">' + texto(c[0]) + "</option>"; }).join("");
     if (porNome[antes]) sel.value = antes;
     colorir(); tabela(); mostrar();
@@ -512,7 +532,7 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
     Array.prototype.forEach.call(mapa.querySelectorAll("path.sel"), function (p) { p.classList.remove("sel"); });
     if (c) marcar(i, "sel", true);
     $("resumo").innerHTML = cartao(r.uteis, "dias úteis") + cartao(DIAS - r.uteis, "dias não úteis") + cartao(DIAS, "dias corridos") +
-      cartao(r.locais, "feriados locais em dia de semana") + cartao(mil(r.uteis * HORAS), "horas de atendimento ao público (__H1__h às __H2__h)");
+      cartao(r.locais, "feriados municipais em dia de semana") + cartao(mil(r.uteis * HORAS), "horas de atendimento ao público (__H1__h às __H2__h)");
     $("alerta").innerHTML = (c && D.cc && !loc[D.cc[0]]) ? '<p class="aviso">Na data da leitura, o TJMG não registrava Corpus Christi para esta comarca em ' + ANO + ". O dia está contado como útil. Confira no TJMG antes de contar prazo.</p>" : "";
     var ab = "";
     if (c && doComarca[i]) {
@@ -596,9 +616,9 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
 
 CABECALHO_CSV = ["Comarca", "Ano", "Municipios da comarca", "Populacao (IBGE)", "Ano de referencia da populacao",
                  "Dias corridos", "Dias uteis", "Dias nao uteis", "Sabados e domingos",
-                 "Feriados estaduais em dia de semana", "Recesso forense em dia de semana",
+                 "Feriados nacionais em dia de semana", "Feriados estaduais em dia de semana", "Recesso forense em dia de semana",
                  "Pontos facultativos e suspensoes por portaria em dia de semana",
-                 "Feriados locais em dia de semana", "Horas de atendimento ao publico (12h as 18h)"]
+                 "Feriados municipais em dia de semana", "Horas de atendimento ao publico (12h as 18h)"]
 ATENDIMENTO = (12, 18)  # horario de atendimento ao publico nos foruns, informado pelo usuario
 
 
@@ -628,7 +648,9 @@ def main():
             if datas_cc.count(moda) < 0.9 * len(comarcas):
                 cc = [moda, datas_cc.count(moda)]
         lido = lidos_em.get(str(ano)) or datetime.date.fromtimestamp(os.path.getmtime(cam)).strftime("%d/%m/%Y")
+        com_cc = {c for c, loc in locais.items() if any("corpus christi" in " ".join(v).lower() for v in loc.values())}
         dados = {"ano": ano, "lido": lido, "dias": linhas[0]["corridos"], "nl": len(locais), "cc": cc,
+                 "ncc": len(com_cc), "semcc": [c for c in comarcas if c not in com_cc] if com_cc and not cc else [],
                  "gerais": {k: [cat[k], "; ".join(v)] for k, v in sorted(gerais.items())},
                  "comarcas": [[l["comarca"], l["uteis"],
                                {k: "; ".join(v) for k, v in sorted(locais.get(l["comarca"], {}).items())},
@@ -644,15 +666,16 @@ def main():
         for i, l in enumerate(linhas):
             muns = [m for m in desenho["m"] if m[0] == i]
             w.writerow([l["comarca"], ano, len(muns), sum(m[10][col] for m in muns), ref, l["corridos"], l["uteis"],
-                        l["nao_uteis"], l["fds"], l["F"], l["R"], l["P"], l["locais"],
+                        l["nao_uteis"], l["fds"], l["N"], l["E"], l["R"], l["P"], l["locais"],
                         l["uteis"] * (ATENDIMENTO[1] - ATENDIMENTO[0])])
         arquivos["calendario-tjmg-%d.csv" % ano] = "﻿" + saida.getvalue()
         us = [l["uteis"] for l in linhas]
-        resumo.append("%d | %d dias | fds %d | feriados %d | recesso %d | portaria %d | uteis sem local %d | "
-                      "por comarca %d a %d | comarcas com feriado local %d de %d | populacao de %d%s"
-                      % (ano, linhas[0]["corridos"], linhas[0]["fds"], linhas[0]["F"], linhas[0]["R"], linhas[0]["P"],
-                         linhas[0]["corridos"] - linhas[0]["fds"] - linhas[0]["F"] - linhas[0]["R"] - linhas[0]["P"],
-                         min(us), max(us), len(locais), len(comarcas), ref,
+        resumo.append("%d | %d dias | fds %d | nacionais %d | estaduais %d | recesso %d | portaria %d | uteis sem municipal %d | "
+                      "por comarca %d a %d | comarcas com feriado municipal %d de %d | Corpus Christi em %d | populacao de %d%s"
+                      % (ano, linhas[0]["corridos"], linhas[0]["fds"], linhas[0]["N"], linhas[0]["E"], linhas[0]["R"], linhas[0]["P"],
+                         linhas[0]["corridos"] - linhas[0]["fds"] - linhas[0]["N"] - linhas[0]["E"] - linhas[0]["R"]
+                         - linhas[0]["P"],
+                         min(us), max(us), len(locais), len(comarcas), len(com_cc), ref,
                          " | Corpus Christi PARCIAL: %d" % cc[1] if cc else ""))
     if erros:
         print("FALHA na conferencia, nada foi gravado:")
