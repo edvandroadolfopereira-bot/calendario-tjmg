@@ -20,6 +20,7 @@ Saidas: docs/ (dados, servidos pelo GitHub Pages) e, se existir nesta maquina, a
 import csv
 import datetime
 import glob
+import hashlib
 import html
 import io
 import json
@@ -240,6 +241,8 @@ def mapa(comarcas):
     px = lambda x: (x - min(xs)) * k * esc
     py = lambda y: (max(ys) - y) * esc
     itens = []
+    # sede da comarca: o municipio que lhe da' o nome, e onde fica o forum
+    sede = lambda c: ALIAS.get({"brasopolis": "brazopolis"}.get(norm(c), norm(c)), {"brasopolis": "brazopolis"}.get(norm(c), norm(c)))
     for cod, an in aneis:
         m = por_id[cod]
         d = "".join("M" + "L".join("%.1f %.1f" % (px(x), py(y)) for x, y in a) + "Z" for a in an)
@@ -247,7 +250,10 @@ def mapa(comarcas):
         r = regioes(m)
         itens.append([dono[cod], m["nome"], d] + [listas[j].index(r[j]) for j in range(4)] +
                      [polos[cod], round(sum(px(x) for x, _ in maior) / len(maior), 1),
-                      round(sum(py(y) for _, y in maior) / len(maior), 1), pop[cod]])
+                      round(sum(py(y) for _, y in maior) / len(maior), 1), pop[cod],
+                      1 if norm(m["nome"]) == sede(comarcas[dono[cod]]) else 0])
+    if sum(i[11] for i in itens) != len(comarcas):
+        raise SystemExit("FALHA: deveria haver uma sede por comarca, ha' %d em %d" % (sum(i[11] for i in itens), len(comarcas)))
     if len(itens) != len(ibge):
         raise SystemExit("FALHA: a malha deveria ter %d municipios, tem %d" % (len(ibge), len(itens)))
     return {"h": round((max(ys) - min(ys)) * esc), "c": comarcas, "lido": guia["coletado_em"].split(" ")[0],
@@ -296,6 +302,7 @@ select:focus,input:focus,th button:focus{outline:3px solid var(--ouro);outline-o
 .legenda{display:flex;flex-wrap:wrap;gap:6px 16px;font:14px Arial,sans-serif;margin:10px 0}
 .legenda span::before{content:"";display:inline-block;width:14px;height:14px;margin-right:6px;vertical-align:-2px;border:1px solid #8b8086;background:var(--c,#fff)}
 .legenda span.bola::before{border-radius:50%;background:#1F1820;border:2px solid #fff;outline:1px solid #1F1820}
+.legenda span.forum::before{border-radius:50%;background:#e0a100;border:1px solid #5b3a00;width:9px;height:9px}
 .legenda span.bolinha::before{border-radius:50%;background:#fff;border:2px solid #1F1820;width:9px;height:9px}
 .meses{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
 .mes{background:#fff;padding:10px;border:1px solid #d8cfc2}
@@ -345,7 +352,7 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
 <option value="u">Dias úteis da comarca no ano</option><option value="0">Mesorregião (IBGE)</option><option value="1">Microrregião (IBGE)</option>
 <option value="2">Região geográfica intermediária (IBGE)</option><option value="3">Região geográfica imediata (IBGE)</option></select></div></div>
 <div class="legenda" id="escala" aria-hidden="true"></div>
-<div class="legenda" aria-hidden="true"><span class="bola">Cidade-polo de região intermediária</span><span class="bolinha">Cidade-polo de região imediata</span></div>
+<div class="legenda" aria-hidden="true"><span class="bola">Cidade-polo de região intermediária</span><span class="bolinha">Cidade-polo de região imediata</span><span class="forum">Sede de comarca, onde fica o fórum do TJMG</span></div>
 <svg id="mapa" role="img" aria-label="Mapa de Minas Gerais dividido por município e comarca"></svg>
 <p class="nota" id="info" aria-live="polite">Nenhum município apontado.</p>
 
@@ -379,6 +386,7 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
 <p class="nota"><strong>Prazo processual não é só dia útil.</strong> O curso do prazo fica suspenso de 20 de dezembro a 20 de janeiro (CPC, art. 220), mas o expediente volta em 7 de janeiro: por isso os dias de 7 a 20 de janeiro aparecem aqui como úteis. A contagem de um prazo segue a lei processual e a intimação do próprio processo.</p>
 <p class="nota"><strong>Horas de atendimento.</strong> A conta de horas multiplica os dias úteis pelo horário de atendimento ao público nos fóruns, das __H1__h às __H2__h, seis horas por dia. É uma medida de abrangência, e não inclui plantão, atendimento eletrônico nem expediente interno.</p>
 <p class="nota"><strong>Mapa e comarcas:</strong> a composição de cada comarca vem da consulta "Municípios e Distritos Integrantes" do <a href="https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/pesquisa.do" target="_blank" rel="noopener">Guia Judiciário do TJMG</a>, feita comarca por comarca<span id="lido-mapa"></span>: cada um dos 853 municípios em uma só comarca. O mapa mostra a divisão atual, inclusive nos anos anteriores. Os limites municipais são da malha do IBGE, em traçado simplificado, que serve para localizar e não para medir divisa.</p>
+<p class="nota"><strong>Fórum:</strong> o ponto dourado marca o município-sede de cada comarca, que é onde o Guia Judiciário do TJMG registra o fórum. Os demais municípios da comarca são atendidos por esse fórum.</p>
 <p class="nota"><strong>Regiões e cidades-polo:</strong> mesorregião e microrregião são a divisão regional do IBGE de 1989; regiões geográficas intermediárias e imediatas são a divisão de 2017, que as substituiu. O IBGE não tem divisão chamada macrorregião dentro do Estado: o nível mais amplo é a mesorregião, na divisão antiga, e a região intermediária, na atual. O IBGE dá a cada região intermediária e imediata o nome do município que a polariza, e é esse município que aparece aqui como cidade-polo.</p>
 <p class="nota"><strong>População:</strong> estimativas anuais da população residente do IBGE, por município, e o Censo Demográfico no ano de 2022. Quando o IBGE não tem número para o ano escolhido, a página usa o último anterior e diz qual foi.</p>
 <p class="nota">O TJMG avisa que a página Feriados Locais não substitui as comunicações e publicações oficiais sobre plantões, suspensões de expediente e suspensões de prazos. Esta página também não.</p>
@@ -404,10 +412,11 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
   /* os dados vem primeiro do endereco atualizado toda semana; se ele falhar, da copia do proprio site */
   function carrega(u, ok, falha) { var s = document.createElement("script"); s.src = u; s.onload = ok; s.onerror = falha; document.head.appendChild(s); }
   function semDados() { $("alerta-ano").innerHTML = '<p class="aviso">Não foi possível carregar os dados agora. Tente de novo em instantes.</p>'; }
+  /* a lista de anos e' pequena e vem sempre fresca; ela traz a versao dos dados, que entra no endereco dos demais */
   function buscar(nome, pronto, feito) {
-    var hoje = new Date().toISOString().slice(0, 10);
-    function local() { carrega("/" + nome + "?d=" + hoje, function () { if (pronto()) feito("/"); else semDados(); }, semDados); }
-    carrega(REMOTO + nome + "?d=" + hoje, function () { if (pronto()) feito(REMOTO); else local(); }, local);
+    var v = window.NOMOS_ANOS ? "?v=" + window.NOMOS_ANOS.v : "?t=" + Date.now();
+    function local() { carrega("/" + nome + v, function () { if (pronto()) feito("/"); else semDados(); }, semDados); }
+    carrega(REMOTO + nome + v, function () { if (pronto()) feito(REMOTO); else local(); }, local);
   }
 
   /* conta a partir dos feriados; serve para o calendario e para conferir a tabela calculada na geracao */
@@ -440,9 +449,10 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
     return "comarca de " + nome + " em " + ANO + ": " + c[1] + " dias úteis, " + (DIAS - c[1]) + " não úteis, " + DIAS + " corridos";
   }
   function regioes(p) { return [3, 4, 5, 6].map(function (j, n) { return NIVEL[n].toLowerCase() + " de " + M.reg[n][p[j]]; }).join("; "); }
+  function forum(p) { return p[11] ? " (sede da comarca, com fórum)" : ""; }
   function polo(p) { return p[7] === 2 ? " (cidade-polo de região intermediária)" : p[7] === 1 ? " (cidade-polo de região imediata)" : ""; }
   function falar(p) {
-    info.textContent = p[1] + polo(p) + ", " + mil(pop(p)) + " habitantes (" + fontePop() + "). " + frase(M.c[p[0]]).replace(/^c/, "C") + ". " + regioes(p).replace(/^m/, "M") + ".";
+    info.textContent = p[1] + forum(p) + polo(p) + ", " + mil(pop(p)) + " habitantes (" + fontePop() + "). " + frase(M.c[p[0]]).replace(/^c/, "C") + ". " + regioes(p).replace(/^m/, "M") + ".";
   }
   function marcar(i, classe, liga) {
     Array.prototype.forEach.call(mapa.querySelectorAll('path[data-c="' + i + '"]'), function (p) { p.classList.toggle(classe, liga); });
@@ -454,7 +464,10 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
     mapa.innerHTML = M.m.map(function (p, j) { return '<path d="' + p[2] + '" data-c="' + p[0] + '" data-j="' + j + '"><title></title></path>'; }).join("") +
       M.m.filter(function (p) { return p[7]; }).sort(function (a, b) { return a[7] - b[7]; }).map(function (p) {
         return p[7] === 2 ? '<circle cx="' + p[8] + '" cy="' + p[9] + '" r="6" fill="#1F1820" stroke="#fff" stroke-width="2"/>'
-          : '<circle cx="' + p[8] + '" cy="' + p[9] + '" r="3" fill="#fff" stroke="#1F1820" stroke-width="1.5"/>';
+          : '<circle cx="' + p[8] + '" cy="' + p[9] + '" r="3.4" fill="#fff" stroke="#1F1820" stroke-width="1.5"/>';
+      }).join("") +
+      M.m.filter(function (p) { return p[11]; }).map(function (p) {
+        return '<circle cx="' + p[8] + '" cy="' + p[9] + '" r="2" fill="#e0a100" stroke="#5b3a00" stroke-width=".6"/>';
       }).join("");
     $("lido-mapa").textContent = " em " + M.lido;
     mapa.addEventListener("mouseover", function (e) {
@@ -543,7 +556,7 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
         '<h3>Municípios da comarca de ' + texto(nome) + '</h3><div class="rolagem"><table class="dados"><thead><tr><th>Município</th><th>População</th>' +
         NIVEL.map(function (n) { return '<th class="e">' + n + "</th>"; }).join("") + "</tr></thead><tbody>" +
         ms.map(function (p) {
-          return "<tr><td>" + (p[1] === nome ? "<strong>" + texto(p[1]) + "</strong> (sede)" : texto(p[1])) + (p[7] ? " <em>" + polo(p).trim() + "</em>" : "") + "</td><td>" + mil(pop(p)) + "</td>" +
+          return "<tr><td>" + (p[11] ? "<strong>" + texto(p[1]) + "</strong> (sede, fórum)" : texto(p[1])) + (p[7] ? " <em>" + polo(p).trim() + "</em>" : "") + "</td><td>" + mil(pop(p)) + "</td>" +
             [3, 4, 5, 6].map(function (j, n) { return '<td class="e">' + texto(M.reg[n][p[j]]) + "</td>"; }).join("") + "</tr>";
         }).join("") + "</tbody><tfoot><tr><td>Total da comarca</td><td>" + mil(total) + '</td><td colspan="4" class="e">' + fontePop() + "</td></tr></tfoot></table></div>";
     }
@@ -598,9 +611,9 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
   selAno.addEventListener("change", trocarAno);
   pintar.addEventListener("change", function () { if (D) colorir(); });
 
-  buscar("calendario-tjmg-mapa.js", function () { return window.NOMOS_MAPA; }, function () {
-    desenhar();
-    buscar("calendario-tjmg-anos.js", function () { return window.NOMOS_ANOS; }, function () {
+  buscar("calendario-tjmg-anos.js", function () { return window.NOMOS_ANOS; }, function () {
+    buscar("calendario-tjmg-mapa.js", function () { return window.NOMOS_MAPA; }, function () {
+      desenhar();
       var anos = window.NOMOS_ANOS.anos, atual = new Date().getFullYear();
       selAno.innerHTML = anos.map(function (a) { return "<option>" + a + "</option>"; }).join("");
       selAno.value = anos.indexOf(atual) >= 0 ? atual : anos[anos.length - 1];
@@ -683,9 +696,11 @@ def main():
             print("  ", e)
         return 1
 
-    arquivos["calendario-tjmg-anos.js"] = "window.NOMOS_ANOS=%s;\n" % json.dumps({"anos": sorted(lidos)})
     arquivos["calendario-tjmg-mapa.js"] = ("window.NOMOS_MAPA=%s;\n"
                                            % json.dumps(desenho, ensure_ascii=False, separators=(",", ":")))
+    # versao = resumo de todos os dados; muda o endereco dos arquivos e o navegador busca de novo
+    versao = hashlib.sha256("".join(arquivos[n] for n in sorted(arquivos)).encode("utf-8")).hexdigest()
+    arquivos["calendario-tjmg-anos.js"] = "window.NOMOS_ANOS=%s;\n" % json.dumps({"anos": sorted(lidos), "v": versao})
     pagina = (PAGINA.replace("__URL__", URL).replace("__REMOTO__", REMOTO)
               .replace("__H1__", str(ATENDIMENTO[0])).replace("__H2__", str(ATENDIMENTO[1])))
     for nome, txt in list(arquivos.items()) + [("pagina", pagina)]:
