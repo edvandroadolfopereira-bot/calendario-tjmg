@@ -115,6 +115,11 @@ def semana(ano, chave):
     return datetime.date(ano, int(chave[:2]), int(chave[3:])).weekday() < 5
 
 
+def prazo_suspenso(chave):
+    """CPC, art. 220: o curso do prazo processual fica suspenso de 20 de dezembro a 20 de janeiro, inclusive."""
+    return chave <= "01-20" or chave >= "12-20"
+
+
 def calcular(ano, comarcas, gerais, locais):
     todos = list(dias_do_ano(ano))
     fds = sum(1 for d in todos if d.weekday() >= 5)
@@ -125,8 +130,10 @@ def calcular(ano, comarcas, gerais, locais):
     for c in comarcas:
         loc = locais.get(c, {})
         ls = sum(1 for k in loc if semana(ano, k) and k not in gerais)
+        susp = sum(1 for d in todos if d.weekday() < 5 and prazo_suspenso(d.strftime("%m-%d"))
+                   and d.strftime("%m-%d") not in gerais and d.strftime("%m-%d") not in loc)
         linhas.append({"comarca": c, "corridos": len(todos), "fds": fds, "N": por_cat["N"], "E": por_cat["E"], "R": por_cat["R"],
-                       "P": por_cat["P"], "locais": ls, "uteis": len(todos) - fds - g - ls,
+                       "P": por_cat["P"], "locais": ls, "susp": susp, "uteis": len(todos) - fds - g - ls,
                        "nao_uteis": fds + g + ls})
     return linhas, cat
 
@@ -312,6 +319,8 @@ select:focus,input:focus,th button:focus{outline:3px solid var(--ouro);outline-o
 .mes th{color:#5d545a;font-weight:600;padding:2px}
 .mes td{padding:5px 0;border:1px solid #efe9df}
 td.fds{background:var(--fds)}
+td.S{background:repeating-linear-gradient(45deg,#fff,#fff 4px,#e6d9ee 4px,#e6d9ee 8px);box-shadow:inset 0 0 0 1px var(--P)}
+.legenda span.l-S::before{background:repeating-linear-gradient(45deg,#fff,#fff 3px,#e6d9ee 3px,#e6d9ee 6px);border-color:var(--P)}
 td.N,td.E,td.R,td.P,td.L{color:#fff;font-weight:700}
 td.N{background:var(--N)}td.E{background:var(--E)}td.R{background:var(--R)}td.P{background:var(--P)}td.L{background:var(--L)}
 .rolagem{overflow-x:auto}
@@ -362,7 +371,7 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
 <div class="cartoes" id="resumo" aria-live="polite"></div>
 <div id="alerta"></div>
 <div id="abrangencia"></div>
-<div class="legenda" aria-hidden="true"><span>Dia útil</span><span style="--c:var(--fds)">Sábado ou domingo</span><span style="--c:var(--N)">Feriado nacional</span><span style="--c:var(--E)">Feriado estadual (Justiça mineira)</span><span style="--c:var(--R)">Recesso forense (estadual)</span><span style="--c:var(--P)">Ponto facultativo ou suspensão por portaria do TJMG</span><span style="--c:var(--L)">Feriado municipal da comarca</span></div>
+<div class="legenda" aria-hidden="true"><span>Dia útil</span><span class="l-S">Dia útil com prazo processual suspenso</span><span style="--c:var(--fds)">Sábado ou domingo</span><span style="--c:var(--N)">Feriado nacional</span><span style="--c:var(--E)">Feriado estadual (Justiça mineira)</span><span style="--c:var(--R)">Recesso forense (estadual)</span><span style="--c:var(--P)">Ponto facultativo ou suspensão por portaria do TJMG</span><span style="--c:var(--L)">Feriado municipal da comarca</span></div>
 <div class="meses" id="meses"></div>
 <h3>Dias não úteis além de sábados e domingos</h3>
 <ul id="lista"></ul>
@@ -383,7 +392,7 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
 <p class="nota"><strong>Nacional, estadual e municipal.</strong> <em>Feriado nacional</em> é o que a lei federal declara: 1º de janeiro, 21 de abril, 1º de maio, 7 de setembro, 2 de novembro, 15 de novembro e 25 de dezembro (Lei 662/1949, art. 1º, na redação da Lei 10.607/2002), 12 de outubro (Lei 6.802/1980) e 20 de novembro (Lei 14.759/2023). <em>Feriado estadual</em>, aqui, é o feriado forense da Justiça mineira, que o TJMG fundamenta na Lei Complementar estadual 59/2001 e na Resolução 458/2004: segunda e terça de Carnaval, Quarta-feira de Cinzas, quarta, quinta e sexta da Semana Santa e o Dia da Justiça, em 8 de dezembro. O <em>recesso forense</em>, de 20 de dezembro a 6 de janeiro, também é estadual (LC 59/2001, art. 313). <em>Ponto facultativo ou suspensão por portaria</em> é o que o Tribunal fixa ano a ano. <em>Feriado municipal</em> é o que vale só na comarca: aniversário da cidade, padroeiro e demais dias de guarda declarados em lei do município.</p>
 <p class="nota"><strong>Corpus Christi não é feriado nacional.</strong> Ele não está entre as datas que a lei federal declara. A Lei 9.093/1995, art. 2º, diz que os feriados religiosos são os dias de guarda declarados em lei municipal, até quatro por município. Por isso o TJMG registra Corpus Christi comarca por comarca, junto dos feriados municipais, e não na lista que vale para todo o Estado. <span id="nota-cc"></span></p>
 <p class="nota"><strong>Anos futuros ficam incompletos por um tempo.</strong> O TJMG registra os feriados municipais e as portarias aos poucos. Enquanto o registro de um ano não termina, a contagem de dias úteis daquele ano fica maior do que será no fim. A página avisa, no alto, quando o ano escolhido está nessa situação, e os dados são lidos de novo no TJMG toda semana.</p>
-<p class="nota"><strong>Prazo processual não é só dia útil.</strong> O curso do prazo fica suspenso de 20 de dezembro a 20 de janeiro (CPC, art. 220), mas o expediente volta em 7 de janeiro: por isso os dias de 7 a 20 de janeiro aparecem aqui como úteis. A contagem de um prazo segue a lei processual e a intimação do próprio processo.</p>
+<p class="nota"><strong>Suspensão dos prazos processuais.</strong> O Código de Processo Civil, no art. 220, suspende o curso do prazo processual nos dias de 20 de dezembro a 20 de janeiro, inclusive: são 32 dias corridos, 12 em dezembro e 20 em janeiro. Suspensão de prazo não é suspensão de expediente. De 20 de dezembro a 6 de janeiro o fórum está em recesso, e esses dias já são não úteis. De 7 a 20 de janeiro o fórum funciona e atende, mas o prazo não corre: esses dias aparecem hachurados no calendário, continuam contados como dias úteis de expediente e são descontados na linha "dias úteis com prazo correndo". A regra é a do processo civil; a contagem de um prazo concreto segue a lei do processo e a intimação recebida.</p>
 <p class="nota"><strong>Horas de atendimento.</strong> A conta de horas multiplica os dias úteis pelo horário de atendimento ao público nos fóruns, das __H1__h às __H2__h, seis horas por dia. É uma medida de abrangência, e não inclui plantão, atendimento eletrônico nem expediente interno.</p>
 <p class="nota"><strong>Mapa e comarcas:</strong> a composição de cada comarca vem da consulta "Municípios e Distritos Integrantes" do <a href="https://www8.tjmg.jus.br/servicos/gj/guia/primeira_instancia/pesquisa.do" target="_blank" rel="noopener">Guia Judiciário do TJMG</a>, feita comarca por comarca<span id="lido-mapa"></span>: cada um dos 853 municípios em uma só comarca. O mapa mostra a divisão atual, inclusive nos anos anteriores. Os limites municipais são da malha do IBGE, em traçado simplificado, que serve para localizar e não para medir divisa.</p>
 <p class="nota"><strong>Fórum:</strong> o ponto dourado marca o município-sede de cada comarca, que é onde o Guia Judiciário do TJMG registra o fórum. Os demais municípios da comarca são atendidos por esse fórum.</p>
@@ -419,9 +428,11 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
     carrega(REMOTO + nome + v, function () { if (pronto()) feito(REMOTO); else local(); }, local);
   }
 
+  /* CPC, art. 220: prazo processual suspenso de 20 de dezembro a 20 de janeiro, inclusive */
+  function suspenso(c) { return c <= "01-20" || c >= "12-20"; }
   /* conta a partir dos feriados; serve para o calendario e para conferir a tabela calculada na geracao */
   function contar(loc) {
-    var r = { uteis: 0, fds: 0, N: 0, E: 0, R: 0, P: 0, locais: 0, mes: [] };
+    var r = { uteis: 0, fds: 0, N: 0, E: 0, R: 0, P: 0, locais: 0, susp: 0, mes: [] };
     for (var m = 0; m < 12; m++) {
       var u = 0, n = new Date(ANO, m + 1, 0).getDate();
       for (var d = 1; d <= n; d++) {
@@ -429,7 +440,7 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
         if (w === 0 || w === 6) r.fds++;
         else if (D.gerais[c]) r[D.gerais[c][0]]++;
         else if (loc[c]) r.locais++;
-        else { r.uteis++; u++; }
+        else { r.uteis++; u++; if (suspenso(c)) r.susp++; }
       }
       r.mes.push([u, n]);
     }
@@ -525,7 +536,8 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
       cartao(base.N, "feriados nacionais em dia de semana") + cartao(base.E, "feriados estaduais em dia de semana") +
       cartao(base.R, "dias de recesso forense em dia de semana") +
       cartao(base.P, "pontos facultativos e suspensões por portaria") +
-      cartao(base.uteis, "dias úteis antes dos feriados municipais") + cartao(D.comarcas.length, "comarcas, em 853 municípios") +
+      cartao(base.uteis, "dias úteis antes dos feriados municipais") +
+      cartao(base.susp, "desses, com prazo processual suspenso (CPC, art. 220)") + cartao(D.comarcas.length, "comarcas, em 853 municípios") +
       cartao(mil(popMG), "habitantes em Minas Gerais (" + fontePop() + ")");
     $("faixa").textContent = "Com os feriados municipais, as comarcas ficam entre " + min + " e " + max + " dias úteis (" + (DIAS - max) + " a " + (DIAS - min) +
       " não úteis), o que dá de " + mil(min * HORAS) + " a " + mil(max * HORAS) + " horas de atendimento ao público no ano. Distribuição: " +
@@ -536,7 +548,7 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
     if (porNome[antes]) sel.value = antes;
     colorir(); tabela(); mostrar();
     /* conferencia: a contagem do navegador tem que bater com a calculada na geracao */
-    window.NOMOS_DIVERGENTES = D.comarcas.filter(function (c) { var r = contar(c[2]); return r.uteis !== c[1] || r.locais !== c[3]; }).map(function (c) { return c[0]; });
+    window.NOMOS_DIVERGENTES = D.comarcas.filter(function (c) { var r = contar(c[2]); return r.uteis !== c[1] || r.locais !== c[3] || r.susp !== c[4]; }).map(function (c) { return c[0]; });
     if (window.NOMOS_DIVERGENTES.length) console.error("contagem divergente", ANO, window.NOMOS_DIVERGENTES);
   }
 
@@ -545,7 +557,8 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
     Array.prototype.forEach.call(mapa.querySelectorAll("path.sel"), function (p) { p.classList.remove("sel"); });
     if (c) marcar(i, "sel", true);
     $("resumo").innerHTML = cartao(r.uteis, "dias úteis") + cartao(DIAS - r.uteis, "dias não úteis") + cartao(DIAS, "dias corridos") +
-      cartao(r.locais, "feriados municipais em dia de semana") + cartao(mil(r.uteis * HORAS), "horas de atendimento ao público (__H1__h às __H2__h)");
+      cartao(r.locais, "feriados municipais em dia de semana") +
+      cartao(r.susp, "dias úteis com prazo processual suspenso") + cartao(r.uteis - r.susp, "dias úteis com prazo correndo") + cartao(mil(r.uteis * HORAS), "horas de atendimento ao público (__H1__h às __H2__h)");
     $("alerta").innerHTML = (c && D.cc && !loc[D.cc[0]]) ? '<p class="aviso">Na data da leitura, o TJMG não registrava Corpus Christi para esta comarca em ' + ANO + ". O dia está contado como útil. Confira no TJMG antes de contar prazo.</p>" : "";
     var ab = "";
     if (c && doComarca[i]) {
@@ -570,9 +583,10 @@ footer{background:var(--faixa);color:#fff;padding:24px 16px;font:14px/1.6 Arial,
       for (var d = 1; d <= n; d++) {
         var w = (p + d - 1) % 7, ch = k(m, d), cl = "", t = "dia útil";
         if (w === 0 || w === 6) { cl = "fds"; t = SEM[w]; }
+        else if (suspenso(ch)) { cl = "S"; t = "dia útil de expediente, com prazo processual suspenso (CPC, art. 220)"; }
         if (loc[ch]) { cl = "L"; t = loc[ch]; }
         if (D.gerais[ch]) { cl = D.gerais[ch][0]; t = D.gerais[ch][1] + (loc[ch] ? "; " + loc[ch] : ""); }
-        if (cl && cl !== "fds") itens.push([d, m, w, t, cl]);
+        if (cl && cl !== "fds" && cl !== "S") itens.push([d, m, w, t, cl]);
         if (w === 0 && d > 1) h += "</tr><tr>";
         h += "<td" + (cl ? ' class="' + cl + '"' : "") + ' title="' + texto(t) + '">' + d + "</td>";
       }
@@ -631,7 +645,8 @@ CABECALHO_CSV = ["Comarca", "Ano", "Municipios da comarca", "Populacao (IBGE)", 
                  "Dias corridos", "Dias uteis", "Dias nao uteis", "Sabados e domingos",
                  "Feriados nacionais em dia de semana", "Feriados estaduais em dia de semana", "Recesso forense em dia de semana",
                  "Pontos facultativos e suspensoes por portaria em dia de semana",
-                 "Feriados municipais em dia de semana", "Horas de atendimento ao publico (12h as 18h)"]
+                 "Feriados municipais em dia de semana", "Dias uteis com prazo processual suspenso (CPC, art. 220)",
+                 "Dias uteis com prazo processual correndo", "Horas de atendimento ao publico (12h as 18h)"]
 ATENDIMENTO = (12, 18)  # horario de atendimento ao publico nos foruns, informado pelo usuario
 
 
@@ -667,7 +682,7 @@ def main():
                  "gerais": {k: [cat[k], "; ".join(v)] for k, v in sorted(gerais.items())},
                  "comarcas": [[l["comarca"], l["uteis"],
                                {k: "; ".join(v) for k, v in sorted(locais.get(l["comarca"], {}).items())},
-                               l["locais"]] for l in linhas]}
+                               l["locais"], l["susp"]] for l in linhas]}
         arquivos["calendario-tjmg-%d.js" % ano] = (
             "window.NOMOS_CAL=window.NOMOS_CAL||{};NOMOS_CAL[%d]=%s;\n"
             % (ano, json.dumps(dados, ensure_ascii=False, separators=(",", ":"))))
@@ -679,7 +694,7 @@ def main():
         for i, l in enumerate(linhas):
             muns = [m for m in desenho["m"] if m[0] == i]
             w.writerow([l["comarca"], ano, len(muns), sum(m[10][col] for m in muns), ref, l["corridos"], l["uteis"],
-                        l["nao_uteis"], l["fds"], l["N"], l["E"], l["R"], l["P"], l["locais"],
+                        l["nao_uteis"], l["fds"], l["N"], l["E"], l["R"], l["P"], l["locais"], l["susp"], l["uteis"] - l["susp"],
                         l["uteis"] * (ATENDIMENTO[1] - ATENDIMENTO[0])])
         arquivos["calendario-tjmg-%d.csv" % ano] = "﻿" + saida.getvalue()
         us = [l["uteis"] for l in linhas]
