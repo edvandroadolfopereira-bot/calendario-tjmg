@@ -56,6 +56,18 @@ def baixar(u):
     raise OSError("sem resposta apos %d tentativas: %r" % (TENTATIVAS, ultimo))
 
 
+def _ibge_anterior_bom(nome):
+    """Data de modificacao da copia do repositorio se ela tem os 853 municipios; senao None."""
+    p = os.path.join(AQUI, nome)
+    try:
+        with open(p, "rb") as f:
+            if len(json.loads(f.read().decode("utf-8"))[0]["resultados"][0]["series"]) != 853:
+                return None
+    except (OSError, ValueError, KeyError, IndexError):
+        return None
+    return datetime.datetime.fromtimestamp(os.path.getmtime(p)).strftime("%d/%m/%Y")
+
+
 def gravar(caminho, dados):
     with open(caminho + ".tmp", "wb") as f:
         f.write(dados)
@@ -79,6 +91,7 @@ def main():
             print("FALHA REAL: a pagina do TJMG veio sem o seletor de anos")
             return 1
         falhas = []
+        avisos = []
         lido_p = os.path.join(PAGINAS, "lido.json")
         lido = json.load(open(lido_p, encoding="utf-8")) if os.path.exists(lido_p) else {}
         hoje = datetime.date.today().strftime("%d/%m/%Y")
@@ -104,7 +117,15 @@ def main():
                 else:
                     falhas.append((nome, "o IBGE nao devolveu os 853 municipios"))
             except (OSError, ValueError, KeyError, IndexError) as e:
-                falhas.append((nome, str(e)))
+                # 15/10/2026: o IBGE passou a esgotar o tempo para o runner do GitHub
+                # (EUA), enquanto responde em menos de 1 s daqui. Populacao muda uma vez
+                # por ano: vale a ultima coleta boa do repositorio, mesmo padrao do passo
+                # do Guia no workflow, mas SO' se ela ainda passa na conferencia dos 853.
+                anterior = _ibge_anterior_bom(nome)
+                if anterior:
+                    avisos.append((nome, "%s; mantida a coleta anterior (%s)" % (e, anterior)))
+                else:
+                    falhas.append((nome, str(e)))
         try:
             g = baixar(GUIA)
             if b'name="codigoComposto"' in g:
@@ -119,6 +140,8 @@ def main():
     except OSError as e:
         print("FALHA REAL: %s" % e)
         return 1
+    for a, e in avisos:
+        print("::warning::IBGE NAO ATUALIZADO: %s | %s" % (a, e))
     for a, e in falhas:
         print("FALHA REAL:", a, "|", e)
     print("anos no seletor: %s | baixados: %d" % (anos, len(anos) - sum(1 for a, _ in falhas if isinstance(a, int))))
