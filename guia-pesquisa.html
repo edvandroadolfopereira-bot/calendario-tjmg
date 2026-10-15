@@ -49,7 +49,7 @@
 <!-- ******** END ALLWEBMENUS CODE FOR menuh ******** -->
 <div id="topoSemMargem" style="height: 150px;">
     <div style="position: absolute; top: 0; right: 5px; font-size: 9px; color: #999;">
-        Versão: 1.10.0
+        Versão: 1.11.0
     </div>
     <div id="topo" style="height:150px;">
         <iframe src="https://www.tjmg.jus.br/portal-tjmg/auxiliar/header-iframe.htm" 
@@ -106,7 +106,7 @@
 	    <fieldset>
 	      <legend>Pesquisa por Localidades (Comarca, Município ou Distrito)</legend>
 	  <table align="center" border="0" cellpadding="4">
-	    <form name="primeiraInstanciaForm" method="get" action="/servicos/gj/guia/primeira_instancia/consulta.do;jsessionid=600F4FCF37C497E3892DBFCC4A1DEE05.portal_node1">
+	    <form name="primeiraInstanciaForm" method="get" action="/servicos/gj/guia/primeira_instancia/consulta.do;jsessionid=71E8311295DCA1EBE8FAF2BB8BCC0EBE.portal_node1">
 	      <tr>
 		<td nowrap>
 		  C&oacute;digo:
@@ -1776,20 +1776,23 @@
 
 
 
+
+
 <hr class="linha-tracejada">
 <h3>Cat&aacute;logo das Comarcas do Estado de Minas Gerais</h3>
 <p>Cat&aacute;logo em formato adequado para impress&atilde;o
-  (Adobe Acrobat - PDF), atualizado at&eacute; <strong>
-    25/08/2026.
-  </strong>
+  (Adobe Acrobat - PDF), atualizado em <strong><span id="data-comarcas">...</span></strong>.
 </p>
 <ul>
   <li>
-    <a href="/info/pdf/index.jsp?uri=/servicos/gj/guia/docs/comarcas.pdf">Rela&ccedil;&atilde;o
-      das Comarcas</a> - <img src="/imagens/icn_pdf.gif"
-			      width="17" height="16"> <span class="pequeno">PDF</span>
+    <a href="/servicos/gj/guia/relatorios/comarcas" target="_blank">Relação das Comarcas</a> - <img src="/imagens/icn_pdf.gif" width="17" height="16"> <span class="pequeno">PDF</span>
   </li>
 </ul>
+  
+<script type="text/javascript" src="/servicos/gj/guia/js/relatorio-metadata.js"></script>
+<script type="text/javascript">
+    carregarDataRelatorio("/servicos/gj/guia/relatorios/comarcas/metadata", "data-comarcas");
+</script>
 
 
 </body>
