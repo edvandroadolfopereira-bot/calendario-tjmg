@@ -8,6 +8,7 @@ minima; pagina ruim nao sobrescreve a boa que ja' esta' no disco.
 Saida: 0 todos os anos baixados, 1 falha real em algum ano, 75 a fonte recusou (429).
 """
 import datetime
+import gzip
 import json
 import os
 import re
@@ -38,7 +39,13 @@ def baixar(u):
         try:
             req = urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0 (coletor Grupo Nomos)"})
             with urllib.request.urlopen(req, timeout=90) as r:
-                return r.read()
+                dados = r.read()
+            # 12/10/2026: no runner do GitHub o IBGE devolveu o corpo em gzip sem
+            # declarar Content-Encoding (byte 0x8b na posicao 1), e o json.loads caiu.
+            # Decide pela assinatura dos bytes, nunca pelo cabecalho.
+            if dados[:2] == b"\x1f\x8b":
+                dados = gzip.decompress(dados)
+            return dados
         except urllib.error.HTTPError as e:
             if e.code == 429:
                 raise Recusou("HTTP 429, Retry-After=%s" % e.headers.get("Retry-After"))
