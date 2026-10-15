@@ -65,7 +65,15 @@ def _ibge_anterior_bom(nome):
                 return None
     except (OSError, ValueError, KeyError, IndexError):
         return None
-    return datetime.datetime.fromtimestamp(os.path.getmtime(p)).strftime("%d/%m/%Y")
+    # a data vem do historico do git: no runner o checkout carimba o arquivo com a hora
+    # da passada, e o mtime diria "coleta de hoje" sobre dado de semanas atras
+    try:
+        import subprocess
+        d = subprocess.run(["git", "log", "-1", "--format=%cd", "--date=format:%d/%m/%Y", "--", nome],
+                           cwd=AQUI, capture_output=True, text=True, timeout=30).stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        d = ""
+    return "coleta de " + d if d else "data da coleta nao medida"
 
 
 def gravar(caminho, dados):
